@@ -149,3 +149,23 @@ button.addEventListener("click", () => {
 });
 
 loadStep();
+
+button.addEventListener("click", () => {
+
+    const step = steps[currentStep];
+
+    if (step.type === "complete") {
+
+        window.location.href = "basics.html";
+        return;
+
+    }
+
+    if (currentStep < steps.length - 1) {
+
+        currentStep++;
+        loadStep();
+
+    }
+
+});
