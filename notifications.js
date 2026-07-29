@@ -26,4 +26,4 @@ function updateNotification() {
 
 updateNotification();
 
-setInterval(updateNotification, 5000);
+setInterval(updateNotification, 3000);
