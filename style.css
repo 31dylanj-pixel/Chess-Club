@@ -296,3 +296,107 @@ h1 {
 
     margin-bottom: 5px;
 }
+
+/* =========================
+   LESSON LAYOUT
+========================= */
+
+.lesson-card {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(14px);
+
+    padding: 30px;
+}
+
+.lesson-board {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 400px;
+}
+
+#board {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    aspect-ratio: 1;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.05);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.lesson-info {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.lesson-info h2 {
+
+    color: #d4af37;
+
+    margin-bottom: 15px;
+}
+
+.lesson-info p {
+
+    line-height: 1.7;
+
+    text-align: left;
+}
+
+#lesson-btn {
+
+    margin-top: auto;
+
+    align-self: center;
+
+    padding: 12px 30px;
+
+    border-radius: 999px;
+
+    border: 2px solid #d4af37;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+#lesson-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(212,175,55,0.15);
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.3);
+}
