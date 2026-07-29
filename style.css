@@ -21,6 +21,8 @@ body {
     );
 
     color: white;
+
+    text-align: center;
 }
 
 /* =========================
@@ -112,6 +114,8 @@ h1 {
     padding: 20px;
 
     margin-bottom: 20px;
+
+    text-align: center;
 }
 
 .info-card h2 {
@@ -160,6 +164,11 @@ h1 {
     min-height: 140px;
 
     transition: all 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-card:hover {
