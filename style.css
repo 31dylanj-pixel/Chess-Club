@@ -208,3 +208,16 @@ h1 {
     }
 
 }
+
+/* =========================
+   OBJECTIVES PAGE
+========================= */
+
+.objective-card h2 {
+    text-align: center;
+}
+
+.objective-card p {
+    text-align: left;
+    line-height: 1.7;
+}
