@@ -222,6 +222,10 @@ h1 {
     line-height: 1.7;
 }
 
+/* =========================
+   BACK BUTTON
+========================= */
+
 .back-btn {
 
     display: inline-block;
@@ -232,17 +236,32 @@ h1 {
 
     border-radius: 999px;
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(212,175,55,0.4);
 
     background: rgba(255,255,255,0.08);
 
     backdrop-filter: blur(12px);
 
-    color: white;
+    color: #d4af37;
 
     text-decoration: none;
 
     font-weight: 600;
 
     transition: all 0.25s ease;
+}
+
+
+.back-btn:hover {
+
+    color: #f5d76e;
+
+    border-color: #d4af37;
+
+    background: rgba(212,175,55,0.12);
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.25);
+
+    transform: translateY(-3px);
+
 }
