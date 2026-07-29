@@ -1,7 +1,8 @@
 const notifications = [
     "Next Meeting: August 15",
     "Sign Ups Opening Soon",
-    "Website Under Development"
+    "Website Under Development",
+    "Join the Club!"
 ];
 
 let notificationIndex = 0;
@@ -9,11 +10,14 @@ let notificationIndex = 0;
 const notificationText = document.getElementById("notification-text");
 
 function updateNotification() {
-    notificationText.style.opacity = 0;
+
+    notificationText.style.opacity = "0";
 
     setTimeout(() => {
+
         notificationText.textContent = notifications[notificationIndex];
-        notificationText.style.opacity = 1;
+
+        notificationText.style.opacity = "0.9";
 
         notificationIndex++;
 
@@ -21,8 +25,10 @@ function updateNotification() {
             notificationIndex = 0;
         }
 
-    }, 300);
+    }, 500);
+
 }
+
 
 updateNotification();
 
