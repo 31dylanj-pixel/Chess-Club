@@ -265,3 +265,33 @@ h1 {
     transform: translateY(-3px);
 
 }
+
+/* =========================
+   EVENTS TABLE
+========================= */
+
+.events-table {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 3fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    text-align: left;
+}
+
+.event-header {
+
+    color: #d4af37;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    padding-bottom: 8px;
+
+    margin-bottom: 5px;
+}
