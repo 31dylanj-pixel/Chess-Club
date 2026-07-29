@@ -130,6 +130,8 @@ h1 {
 
 .info-card p {
     opacity: 0.9;
+
+    transition: opacity 0.5s ease;
 }
 
 /* =========================
