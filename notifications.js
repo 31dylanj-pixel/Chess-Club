@@ -3,7 +3,7 @@ const notifications = [
     "Sign Ups Opening Soon",
     "Website Under Development",
     "Join the Club!",
-    "On July 18th, 11 year old Bodhana Sivanandan scored her first IM Norm, breaking a 38 Year Old Record"
+    "On July 18th, 11 year old Bodhana Sivanandan scored her first IM Norm, breaking a 38 Year Old Record",
     "D Camp: July 31 - August 2"
 ];
 
