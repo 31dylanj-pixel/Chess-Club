@@ -1,8 +1,9 @@
 const notifications = [
-    "Next Meeting: August 15",
+    "First Meeting: August 22",
     "Sign Ups Opening Soon",
     "Website Under Development",
-    "Join the Club!"
+    "Join the Club!",
+    "On July 18th, 11 year old Bodhana Sivanandan scored her first IM Norm, breaking a 38 Year Old Record"
 ];
 
 let notificationIndex = 0;
@@ -32,4 +33,4 @@ function updateNotification() {
 
 updateNotification();
 
-setInterval(updateNotification, 3000);
+setInterval(updateNotification, 4000);
