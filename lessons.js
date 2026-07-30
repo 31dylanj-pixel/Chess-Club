@@ -86,6 +86,22 @@ const lessons = {
             button: "Finish"
         }
 
-    ]
+    ],
+    rook: [
 
+        {
+            type: "explanation",
+            title: "The Rook",
+            text: "Rooks move any number of squares horizontally or vertically.",
+            button: "Next"
+        },
+    
+        {
+            type: "complete",
+            title: "Rook Lesson Complete!",
+            text: "You learned how rooks move.",
+            button: "Finish"
+        }
+    
+    ]
 };
