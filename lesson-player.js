@@ -17,7 +17,21 @@ const title = document.getElementById("lesson-title");
 const text = document.getElementById("lesson-text");
 const button = document.getElementById("lesson-btn");
 
-pageTitle.textContent = "♙ Lesson 1: Pawn";
+const lessonTitles = {
+
+    pawn: "♙ Lesson 1: Pawn",
+    rook: "♖ Lesson 2: Rook",
+    knight: "♘ Lesson 3: Knight",
+    bishop: "♗ Lesson 4: Bishop",
+    queen: "♕ Lesson 5: Queen",
+    king: "♔ Lesson 6: King"
+
+};
+
+
+pageTitle.textContent = lessonTitles[lessonName];
+
+document.title = `${lessonTitles[lessonName]} - Chess Club`;
 
 function loadStep() {
 
