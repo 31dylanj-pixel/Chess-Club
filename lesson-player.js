@@ -2,6 +2,12 @@ const params = new URLSearchParams(window.location.search);
 
 const lessonName = params.get("lesson");
 
+if (!lessonName || !lessons[lessonName]) {
+
+    window.location.href = "basics.html";
+
+}
+
 const lessonSteps = lessons[lessonName];
 
 let currentStep = 0;
