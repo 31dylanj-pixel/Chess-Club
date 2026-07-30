@@ -1,5 +1,7 @@
 const board = document.getElementById("board");
 
+board.innerHTML = "";
+
 const boardSize = 8;
 
 for (let row = 0; row < boardSize; row++) {
