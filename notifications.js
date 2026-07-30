@@ -1,5 +1,5 @@
 const notifications = [
-    "First Meeting: August 22",
+    "First Meeting: August 26",
     "Sign Ups Opening Soon",
     "Website Under Development",
     "Join the Club!",
