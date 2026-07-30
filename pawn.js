@@ -139,19 +139,6 @@ function loadStep() {
 
 button.addEventListener("click", () => {
 
-    if (currentStep < steps.length - 1) {
-
-        currentStep++;
-        loadStep();
-
-    }
-
-});
-
-loadStep();
-
-button.addEventListener("click", () => {
-
     const step = steps[currentStep];
 
     if (step.type === "complete") {
@@ -169,3 +156,6 @@ button.addEventListener("click", () => {
     }
 
 });
+
+loadStep();
+
