@@ -34,3 +34,15 @@
     background: #b58863;
 
 }
+
+.piece {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 42px;
+
+}
