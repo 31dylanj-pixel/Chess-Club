@@ -17,9 +17,7 @@ const title = document.getElementById("lesson-title");
 const text = document.getElementById("lesson-text");
 const button = document.getElementById("lesson-btn");
 
-pageTitle.textContent =
-    lessonName.charAt(0).toUpperCase() +
-    lessonName.slice(1);
+pageTitle.textContent = "♙ Lesson 1: Pawn";
 
 function loadStep() {
 
