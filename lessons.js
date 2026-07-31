@@ -1,5 +1,130 @@
 const lessons = {
 
+    king: [
+
+        {
+            type: "explanation",
+
+            title: "The King",
+
+            text: "Let's start with the king, the most important piece in the game.",
+
+            button: "Let's Start!",
+
+            board: {
+                e1: "wk.svg"
+            }
+
+        },
+
+
+        {
+            type: "explanation",
+
+            title: "King Movement",
+
+            text: "The king can move one square in any direction.",
+
+            button: "Continue",
+
+            board: {
+                e1: "wk.svg"
+            },
+
+            highlights: [
+                "d1",
+                "d2",
+                "e2",
+                "f2",
+                "f1"
+            ]
+
+        },
+
+
+        {
+            type: "practice",
+
+            title: "Challenge 1/3",
+
+            text: "Drag your king to capture the pawn.",
+
+            button: "",
+
+            board: {
+                e1: "wk.svg",
+                f2: "bp.svg"
+            },
+
+            challenge: {
+                from: "e1",
+                target: "f2"
+            }
+
+        },
+
+
+        {
+            type: "practice",
+
+            title: "Challenge 2/3",
+
+            text: "Nice! Now capture the next pawn.",
+
+            button: "",
+
+            board: {
+                f2: "wk.svg",
+                g1: "bp.svg"
+            },
+
+            challenge: {
+                from: "f2",
+                target: "g1"
+            }
+
+        },
+
+
+        {
+            type: "practice",
+
+            title: "Challenge 3/3",
+
+            text: "Keep it up! One more to go!",
+
+            button: "",
+
+            board: {
+                g1: "wk.svg",
+                e2: "bp.svg"
+            },
+
+            challenge: {
+                from: "g1",
+                target: "e2"
+            }
+
+        },
+
+
+        {
+            type: "complete",
+
+            title: "Lesson Complete!",
+
+            text: "Good job! Now you know how to move the king.",
+
+            button: "Finish",
+
+            board: {
+                e2: "wk.svg"
+            }
+
+        }
+
+    ],
+    
     pawn: [
 
         {
@@ -87,6 +212,7 @@ const lessons = {
         }
 
     ],
+    
     rook: [
 
         {
