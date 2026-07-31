@@ -40,6 +40,9 @@ function loadStep() {
     title.textContent = step.title;
     text.textContent = step.text;
     button.textContent = step.button;
+
+    loadBoard(step.board);
+
 }
 
 button.addEventListener("click", () => {
