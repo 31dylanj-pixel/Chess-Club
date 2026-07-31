@@ -4,8 +4,7 @@ board.innerHTML = "";
 
 const pieces = {
 
-    e2: "♙",
-    e7: "♟"
+    e2: "wp.svg"
 
 };
 
@@ -35,9 +34,13 @@ for (let row = 0; row < 8; row++) {
 
         if (pieces[position]) {
 
-            square.textContent = pieces[position];
+            const piece = document.createElement("img");
 
-            square.classList.add("piece");
+            piece.src = `pieces/${pieces[position]}`;
+            
+            piece.classList.add("piece");
+            
+            square.appendChild(piece);
 
         }
 
