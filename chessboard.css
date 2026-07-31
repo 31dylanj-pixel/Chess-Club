@@ -59,6 +59,12 @@
 
 }
 
+.highlight {
+
+    box-shadow: inset 0 0 0 5px gold;
+
+}
+
 .rank-label {
 
     position: absolute;
