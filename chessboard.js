@@ -1,7 +1,3 @@
-const board = document.getElementById("board");
-
-board.innerHTML = "";
-
 let currentPieces = {};
 
 let currentHighlights = [];
