@@ -1,3 +1,7 @@
+const progressFill = document.getElementById(
+    "lesson-progress-fill"
+);
+
 const params = new URLSearchParams(window.location.search);
 
 const lessonName = params.get("lesson");
@@ -33,13 +37,24 @@ pageTitle.textContent = lessonTitles[lessonName];
 
 document.title = `${lessonTitles[lessonName]} - Chess Club`;
 
-function loadStep() {
+function updateProgress(){
 
+    const progress =
+        (currentStep / (lessonSteps.length - 1)) * 100;
+
+
+    progressFill.style.width =
+        progress + "%";
+
+}
+
+function loadStep(){
     const step = lessonSteps[currentStep];
-
     title.textContent = step.title;
     text.textContent = step.text;
     button.textContent = step.button;
+
+    updateProgress();
 
     loadBoard(
         step.board,
