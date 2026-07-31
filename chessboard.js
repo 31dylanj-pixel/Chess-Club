@@ -30,8 +30,9 @@ for (let row = 0; row < 8; row++) {
 
 
         const position = files[col] + (8 - row);
-
-
+        const rank = 8 - row;
+        const file = files[col];
+        
         if (pieces[position]) {
 
             const piece = document.createElement("img");
@@ -44,7 +45,30 @@ for (let row = 0; row < 8; row++) {
 
         }
 
+        if (col === 0) {
 
+            const rankLabel = document.createElement("span");
+        
+            rankLabel.classList.add("rank-label");
+        
+            rankLabel.textContent = rank;
+        
+            square.appendChild(rankLabel);
+        
+        }
+        
+        if (row === 7) {
+        
+            const fileLabel = document.createElement("span");
+        
+            fileLabel.classList.add("file-label");
+        
+            fileLabel.textContent = file;
+        
+            square.appendChild(fileLabel);
+        
+        }
+        
         board.appendChild(square);
 
     }
