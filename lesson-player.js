@@ -115,7 +115,7 @@ function loadStep(){
     // LOAD BOARD
 
     loadBoard(
-        step.board || {},
+        step.pieces || {},
         step.highlights || []
     );
 
