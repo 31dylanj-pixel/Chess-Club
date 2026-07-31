@@ -4,16 +4,17 @@ board.innerHTML = "";
 
 let currentPieces = {};
 
+let currentHighlights = [];
 
-function loadBoard(pieces) {
+function loadBoard(pieces, highlights = []) {
 
     currentPieces = pieces;
+
+    currentHighlights = highlights;
 
     drawBoard();
 
 }
-
-
 
 function drawBoard() {
 
@@ -51,6 +52,14 @@ function drawBoard() {
 
             const position = files[col] + (8 - row);
 
+            if (
+                currentHighlights &&
+                currentHighlights.includes(position)
+            ) {
+            
+                square.classList.add("highlight");
+            
+            }
             const rank = 8 - row;
 
             const file = files[col];
