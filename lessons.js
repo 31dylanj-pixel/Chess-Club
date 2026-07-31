@@ -18,19 +18,19 @@ const lessons = {
         },
 
 
-        {
+       {
             type: "explanation",
-
+        
             title: "King Movement",
-
+        
             text: "The king can move one square in any direction.",
-
+        
             button: "Continue",
-
+        
             board: {
                 e1: "wk.svg"
             },
-
+        
             highlights: [
                 "d1",
                 "d2",
@@ -38,7 +38,6 @@ const lessons = {
                 "f2",
                 "f1"
             ]
-
         },
 
 
