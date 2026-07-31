@@ -2,11 +2,16 @@ const board = document.getElementById("board");
 
 board.innerHTML = "";
 
-const pieces = {
+let currentPieces = {};
 
-    e2: "wp.svg"
 
-};
+function loadBoard(pieces) {
+
+    currentPieces = pieces;
+
+    drawBoard();
+
+}
 
 const files = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
