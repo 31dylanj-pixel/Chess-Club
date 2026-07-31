@@ -41,7 +41,10 @@ function loadStep() {
     text.textContent = step.text;
     button.textContent = step.button;
 
-    loadBoard(step.board);
+    loadBoard(
+        step.board,
+        step.highlights
+    );
 
 }
 
