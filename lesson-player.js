@@ -159,3 +159,94 @@ button.addEventListener("click", () => {
 // START LESSON
 
 loadStep();
+
+window.onBoardMove = function(from, to) {
+
+    const step = lessonSteps[currentStep];
+
+
+    // no board on this step
+
+    if (!step.pieces) {
+
+        return;
+
+    }
+
+
+    const movingPiece =
+        step.pieces[from];
+
+
+    if (!movingPiece) {
+
+        return;
+
+    }
+
+
+    // KING LESSON
+
+    if (lessonName === "king") {
+
+        const files = "abcdefgh";
+
+        const fromFile =
+            files.indexOf(from[0]);
+
+        const fromRank =
+            parseInt(from[1]);
+
+        const toFile =
+            files.indexOf(to[0]);
+
+        const toRank =
+            parseInt(to[1]);
+
+
+        const dx =
+            Math.abs(toFile - fromFile);
+
+        const dy =
+            Math.abs(toRank - fromRank);
+
+
+        // king can only move 1 square
+
+        if (dx > 1 || dy > 1) {
+
+            return;
+
+        }
+
+    }
+
+
+    delete step.pieces[from];
+
+    step.pieces[to] = movingPiece;
+
+
+    // challenge step
+
+    if (step.target) {
+
+        if (to === step.target) {
+
+            currentStep++;
+
+            loadStep();
+
+            return;
+
+        }
+
+    }
+
+
+    loadBoard(
+        step.pieces,
+        step.highlights || []
+    );
+
+};
