@@ -4,30 +4,22 @@ const lessons = {
 
         {
             type: "explanation",
-
             title: "The King",
-
-            text: "Let's start with the king, the most important piece in the game.",
-
+            text: "Let's start with the king, the most important piece in chess.",
             button: "Let's Start!",
-
-            board: {
+            pieces: {
                 e1: "wk.svg"
             }
-
         },
-
-
-       {
-            type: "explanation",
         
-            title: "King Movement",
         
+        {
+            type: "movement",
+            title: "How the King Moves",
             text: "The king can move one square in any direction.",
-        
             button: "Continue",
         
-            board: {
+            pieces: {
                 e1: "wk.svg"
             },
         
@@ -39,89 +31,64 @@ const lessons = {
                 "f1"
             ]
         },
-
-
+        
+        
         {
-            type: "practice",
-
+            type: "challenge",
             title: "Challenge 1/3",
-
             text: "Drag your king to capture the pawn.",
-
-            button: "",
-
-            board: {
+            
+            pieces: {
                 e1: "wk.svg",
                 f2: "bp.svg"
             },
-
-            challenge: {
-                from: "e1",
-                target: "f2"
-            }
-
+        
+            target: "f2"
+        
         },
-
-
+        
+        
         {
-            type: "practice",
-
+            type: "challenge",
             title: "Challenge 2/3",
-
             text: "Nice! Now capture the next pawn.",
-
-            button: "",
-
-            board: {
+        
+            pieces: {
                 f2: "wk.svg",
                 g1: "bp.svg"
             },
-
-            challenge: {
-                from: "f2",
-                target: "g1"
-            }
-
+        
+            target: "g1"
+        
         },
-
-
+        
+        
         {
-            type: "practice",
-
+            type: "challenge",
             title: "Challenge 3/3",
-
             text: "Keep it up! One more to go!",
-
-            button: "",
-
-            board: {
+        
+            pieces: {
                 g1: "wk.svg",
                 e2: "bp.svg"
             },
-
-            challenge: {
-                from: "g1",
-                target: "e2"
-            }
-
+        
+            target: "e2"
+        
         },
-
-
+        
+        
         {
-            type: "complete",
-
-            title: "Lesson Complete!",
-
-            text: "Good job! Now you know how to move the king.",
-
-            button: "Finish",
-
-            board: {
-                e2: "wk.svg"
+            type:"complete",
+            title:"Lesson Complete!",
+            text:"Good job! Now you know how to move the king.",
+            button:"Finish",
+        
+            pieces:{
+                e2:"wk.svg"
             }
-
-        }
-
+        },
+    
     ],
     
     pawn: [
