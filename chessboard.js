@@ -65,13 +65,26 @@ function drawBoard() {
             if (currentPieces[position]) {
 
                 const piece = document.createElement("img");
-
+            
                 piece.src = `pieces/${currentPieces[position]}`;
-
+            
                 piece.classList.add("piece");
-
+            
+                piece.draggable = true;
+            
+            
+                piece.addEventListener("dragstart", (e) => {
+            
+                    e.dataTransfer.setData(
+                        "from",
+                        position
+                    );
+            
+                });
+            
+            
                 square.appendChild(piece);
-
+            
             }
 
 
@@ -120,6 +133,92 @@ function drawBoard() {
 
 
             board.appendChild(square);
+
+            square.addEventListener("dragover", (e) => {
+
+                e.preventDefault();
+            
+            });
+            
+            
+            square.addEventListener("drop", (e) => {
+            
+                e.preventDefault();
+            
+            
+                const from =
+                    e.dataTransfer.getData("from");
+            
+            
+                handleMove(
+                    from,
+                    position
+                );
+            
+            });
+        }
+
+    }
+
+}
+
+function handleMove(from, to) {
+
+
+    const step = lessonSteps[currentStep];
+
+
+    // only allow king movement
+
+    if (!step.target) {
+
+        return;
+
+    }
+
+
+    const movingPiece =
+        step.pieces[from];
+
+
+    if (!movingPiece) {
+
+        return;
+
+    }
+
+
+    // move king
+
+    if (movingPiece === "wk.svg") {
+
+
+        step.pieces[to] = "wk.svg";
+
+
+        delete step.pieces[from];
+
+
+        // captured target
+
+        if (to === step.target) {
+
+
+            currentStep++;
+
+
+            loadStep();
+
+
+        }
+
+        else {
+
+
+            loadBoard(
+                step.pieces,
+                step.highlights || []
+            );
 
         }
 
