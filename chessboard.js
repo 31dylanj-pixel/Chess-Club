@@ -2,6 +2,9 @@ let currentPieces = {};
 
 let currentHighlights = [];
 
+let selectedSquare = null;
+
+
 function loadBoard(pieces, highlights = []) {
 
     currentPieces = pieces;
@@ -12,12 +15,12 @@ function loadBoard(pieces, highlights = []) {
 
 }
 
+
 function drawBoard() {
 
     const board = document.getElementById("board");
 
     board.innerHTML = "";
-
 
     const files = [
         "a","b","c","d",
@@ -28,7 +31,6 @@ function drawBoard() {
     for (let row = 0; row < 8; row++) {
 
         for (let col = 0; col < 8; col++) {
-
 
             const square = document.createElement("div");
 
@@ -48,84 +50,89 @@ function drawBoard() {
 
             const position = files[col] + (8 - row);
 
-            if (
-                currentHighlights &&
-                currentHighlights.includes(position)
-            ) {
-            
-                square.classList.add("highlight");
-            
-            }
             const rank = 8 - row;
 
             const file = files[col];
 
 
-            // PIECES
-            if (currentPieces[position]) {
+            if (
+                currentHighlights &&
+                currentHighlights.includes(position)
+            ) {
 
-                const piece = document.createElement("img");
-            
-                piece.src = `pieces/${currentPieces[position]}`;
-            
-                piece.classList.add("piece");
-            
-                piece.draggable = true;
-            
-            
-                piece.addEventListener("dragstart", (e) => {
-            
-                    e.dataTransfer.setData(
-                        "from",
-                        position
-                    );
-            
-                });
-            
-            
-                square.appendChild(piece);
-            
+                square.classList.add("highlight");
+
             }
 
 
+            if (selectedSquare === position) {
 
-            // RANK LABELS
+                square.classList.add("selected");
+
+            }
+
+
+            // PIECE
+
+            if (currentPieces[position]) {
+
+                const piece = document.createElement("img");
+
+                piece.src =
+                    `pieces/${currentPieces[position]}`;
+
+                piece.classList.add("piece");
+
+                square.appendChild(piece);
+
+            }
+
+
+            // CLICK
+
+            square.addEventListener("click", () => {
+
+                handleSquareClick(position);
+
+            });
+
+
+            // RANK LABEL
+
             if (col === 0) {
 
-                const rankLabel = document.createElement("span");
+                const rankLabel =
+                    document.createElement("span");
 
                 rankLabel.classList.add("rank-label");
 
                 rankLabel.textContent = rank;
-
 
                 rankLabel.style.color =
                     square.classList.contains("light")
                         ? "#b58863"
                         : "#f0d9b5";
 
-
                 square.appendChild(rankLabel);
 
             }
 
 
+            // FILE LABEL
 
-            // FILE LABELS
             if (row === 7) {
 
-                const fileLabel = document.createElement("span");
+                const fileLabel =
+                    document.createElement("span");
 
                 fileLabel.classList.add("file-label");
 
                 fileLabel.textContent = file;
 
-
                 fileLabel.style.color =
                     square.classList.contains("light")
                         ? "#b58863"
                         : "#f0d9b5";
-
 
                 square.appendChild(fileLabel);
 
@@ -134,94 +141,46 @@ function drawBoard() {
 
             board.appendChild(square);
 
-            square.addEventListener("dragover", (e) => {
-
-                e.preventDefault();
-            
-            });
-            
-            
-            square.addEventListener("drop", (e) => {
-            
-                e.preventDefault();
-            
-            
-                const from =
-                    e.dataTransfer.getData("from");
-            
-            
-                handleMove(
-                    from,
-                    position
-                );
-            
-            });
         }
 
     }
 
 }
 
-function handleMove(from, to) {
 
+function handleSquareClick(position) {
 
-    const step = lessonSteps[currentStep];
+    // first click = select piece
 
+    if (!selectedSquare) {
 
-    // only allow king movement
+        if (currentPieces[position]) {
 
-    if (!step.target) {
+            selectedSquare = position;
+
+            drawBoard();
+
+        }
 
         return;
 
     }
 
 
-    const movingPiece =
-        step.pieces[from];
+    // second click = move
 
+    if (window.onBoardMove) {
 
-    if (!movingPiece) {
-
-        return;
-
-    }
-
-
-    // move king
-
-    if (movingPiece === "wk.svg") {
-
-
-        step.pieces[to] = "wk.svg";
-
-
-        delete step.pieces[from];
-
-
-        // captured target
-
-        if (to === step.target) {
-
-
-            currentStep++;
-
-
-            loadStep();
-
-
-        }
-
-        else {
-
-
-            loadBoard(
-                step.pieces,
-                step.highlights || []
-            );
-
-        }
+        window.onBoardMove(
+            selectedSquare,
+            position
+        );
 
     }
+
+
+    selectedSquare = null;
+
+    drawBoard();
 
 }
