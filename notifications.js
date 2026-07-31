@@ -1,10 +1,10 @@
 const notifications = [
     "First Meeting: August 26",
-    "Sign Ups Opening Soon",
+    "Sign Ups Opening on the 19th! (Tentative)",
     "Website Under Development",
     "Join the Club!",
-    "On July 18th, 11 year old Bodhana Sivanandan scored her first IM Norm, breaking a 38 Year Old Record",
-    "D Camp: July 31 - August 2"
+    "B2SB (Back to school Bash) FNF on the 7th!",
+    "No School on August 12!"
 ];
 
 let notificationIndex = 0;
