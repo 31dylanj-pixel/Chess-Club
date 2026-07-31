@@ -32,11 +32,13 @@
 
 .piece {
 
-    font-size: 38px;
+    width: 85%;
+    height: 85%;
 
-    line-height: 1;
+    object-fit: contain;
 
     user-select: none;
+    pointer-events: none;
 
 }
 
