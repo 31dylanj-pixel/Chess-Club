@@ -373,8 +373,6 @@ h1 {
 
 #lesson-btn {
 
-    margin-top: auto;
-
     align-self: center;
 
     padding: 12px 30px;
@@ -419,10 +417,9 @@ h1 {
 
     overflow:hidden;
 
-    margin-top:20px;
+    margin-top:auto;
 
 }
-
 
 #lesson-progress-fill {
 
