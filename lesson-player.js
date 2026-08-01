@@ -104,15 +104,17 @@ function loadStep(){
     if (step.type === "challenge") {
 
         button.style.visibility = "hidden";
+        button.disabled = true;
     
     } else {
     
-        button.style.display = "inline-flex";
+        button.style.visibility = "visible";
+        button.disabled = false;
+    
         button.textContent = step.button;
     
-    }
-
-
+    }   
+    
     const interactiveTypes = [
         "practice",
         "challenge",
