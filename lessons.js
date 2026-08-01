@@ -90,6 +90,144 @@ const lessons = {
         },
     
     ],
+
+    queen: [
+
+        {
+            type: "explanation",
+            title: "The Queen",
+            text: "The queen is the most powerful piece in chess. It can move in many directions.",
+            button: "Let's Start!",
+    
+            pieces: {
+                d4: "wq.svg"
+            }
+        },
+    
+    
+        {
+            type: "movement",
+            title: "How the Queen Moves",
+            text: "The queen can move any number of squares horizontally, vertically, or diagonally.",
+            button: "Continue",
+    
+            pieces: {
+                d4: "wq.svg"
+            },
+    
+            highlights: [
+    
+                // Horizontal
+                "a4",
+                "b4",
+                "c4",
+                "e4",
+                "f4",
+                "g4",
+                "h4",
+    
+                // Vertical
+                "d1",
+                "d2",
+                "d3",
+                "d5",
+                "d6",
+                "d7",
+                "d8",
+    
+                // Diagonal up-left
+                "c5",
+                "b6",
+                "a7",
+    
+                // Diagonal up-right
+                "e5",
+                "f6",
+                "g7",
+                "h8",
+    
+                // Diagonal down-left
+                "c3",
+                "b2",
+                "a1",
+    
+                // Diagonal down-right
+                "e3",
+                "f2",
+                "g1"
+    
+            ]
+        },
+    
+    
+        {
+            type: "challenge",
+            title: "Challenge 1/4",
+            text: "Move your queen horizontally to capture the pawn.",
+    
+            pieces: {
+                d1: "wq.svg",
+                h1: "bp.svg"
+            },
+    
+            target: "h1"
+        },
+    
+    
+        {
+            type: "challenge",
+            title: "Challenge 2/4",
+            text: "Nice! Now move your queen vertically.",
+    
+            pieces: {
+                h1: "wq.svg",
+                h8: "bp.svg"
+            },
+    
+            target: "h8"
+        },
+    
+    
+        {
+            type: "challenge",
+            title: "Challenge 3/4",
+            text: "Great! Now move your queen diagonally.",
+    
+            pieces: {
+                h8: "wq.svg",
+                e5: "bp.svg"
+            },
+    
+            target: "e5"
+        },
+    
+    
+        {
+            type: "challenge",
+            title: "Challenge 4/4",
+            text: "Final challenge! Use any queen movement to capture the pawn.",
+    
+            pieces: {
+                e5: "wq.svg",
+                a5: "bp.svg"
+            },
+    
+            target: "a5"
+        },
+    
+    
+        {
+            type: "complete",
+            title: "Lesson Complete!",
+            text: "Good job! Now you know how to move the queen.",
+            button: "Finish",
+    
+            pieces: {
+                a5: "wq.svg"
+            }
+        }
+    
+    ],
     
     pawn: [
 
