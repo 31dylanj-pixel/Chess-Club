@@ -101,7 +101,16 @@ function loadStep(){
 
     text.textContent = step.text;
 
-    button.textContent = step.button;
+    if (step.type === "challenge") {
+
+        button.style.display = "none";
+    
+    } else {
+    
+        button.style.display = "inline-flex";
+        button.textContent = step.button;
+    
+    }
 
 
     const interactiveTypes = [
@@ -126,33 +135,27 @@ function loadStep(){
 
 button.addEventListener("click", () => {
 
-
     const step = lessonSteps[currentStep];
 
+    if (step.type === "challenge") {
+        return;
+    }
 
     if (step.type === "complete") {
 
         window.location.href = "basics.html";
-
         return;
 
     }
 
-
-
     if (currentStep < lessonSteps.length - 1) {
 
         currentStep++;
-
         loadStep();
 
     }
 
-
 });
-
-
-
 
 // START LESSON
 
