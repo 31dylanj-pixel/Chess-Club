@@ -150,6 +150,10 @@ function drawBoard() {
 
 function handleSquareClick(position) {
 
+    if (!window.boardInteractive) {
+        return;
+    }
+
     // first click = select piece
 
     if (!selectedSquare) {
@@ -161,6 +165,19 @@ function handleSquareClick(position) {
             drawBoard();
 
         }
+
+        return;
+
+    }
+
+
+    // clicking same square deselects
+
+    if (selectedSquare === position) {
+
+        selectedSquare = null;
+
+        drawBoard();
 
         return;
 
