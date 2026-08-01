@@ -103,7 +103,7 @@ function loadStep(){
 
     if (step.type === "challenge") {
 
-        button.style.display = "none";
+        button.style.visibility = "hidden";
     
     } else {
     
