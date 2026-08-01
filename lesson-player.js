@@ -97,22 +97,24 @@ function loadStep(){
 
     const step = lessonSteps[currentStep];
 
-
     title.textContent = step.title;
 
-
     text.textContent = step.text;
-
 
     button.textContent = step.button;
 
 
+    const interactiveTypes = [
+        "practice",
+        "challenge",
+        "quiz"
+    ];
+
+    window.boardInteractive =
+        interactiveTypes.includes(step.type);
+
 
     updateProgress();
-
-
-
-    // LOAD BOARD
 
     loadBoard(
         step.pieces || {},
@@ -120,10 +122,6 @@ function loadStep(){
     );
 
 }
-
-
-
-
 // BUTTON
 
 button.addEventListener("click", () => {
