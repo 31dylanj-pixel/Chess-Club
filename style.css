@@ -61,10 +61,10 @@ h1 {
 }
 
 /* =========================
-   SIGN UP BUTTON
+   URL BUTTON
 ========================= */
 
-.signup-btn {
+.url-btn {
     display: inline-block;
 
     margin: 0 auto 30px;
@@ -92,7 +92,7 @@ h1 {
     transition: all 0.25s ease;
 }
 
-.signup-btn:hover {
+.url-btn:hover {
     transform: translateY(-2px);
 
     background: rgba(212,175,55,0.15);
