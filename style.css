@@ -807,3 +807,90 @@ h1 {
     }
 
 }
+
+/* =========================
+   RULES & POINTS
+========================= */
+
+.rules-card {
+    text-align: left;
+}
+
+.rules-card h2,
+.points-card h2,
+.rules-warning h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.rules-list {
+    padding-left: 25px;
+    margin: 0;
+}
+
+.rules-list li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.rules-list li:last-child {
+    margin-bottom: 0;
+}
+
+.rules-warning {
+    margin: 25px 0;
+
+    padding: 25px;
+
+    background: rgba(255, 180, 0, 0.08);
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 20px;
+
+    text-align: left;
+
+    backdrop-filter: blur(14px);
+}
+
+.rules-warning p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+.points-card {
+    text-align: left;
+}
+
+.points-category {
+    margin-bottom: 30px;
+}
+
+.points-category:last-child {
+    margin-bottom: 0;
+}
+
+.points-category h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.points-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 16px;
+
+    margin-bottom: 8px;
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 10px;
+}
+
+.points-row strong {
+    color: #d4af37;
+    font-size: 1.05rem;
+}
