@@ -692,3 +692,118 @@ h1 {
     }
 
 }
+
+/* =========================
+   PUZZLE WINNERS
+========================= */
+
+.latest-winner {
+    max-width: 700px;
+    margin: 0 auto 40px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(14px);
+}
+
+.latest-winner h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.latest-puzzle {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 15px;
+}
+
+.latest-name {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+
+    color: white;
+}
+
+
+.winner-archive {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.winner-archive > h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+
+.winner-card {
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(14px);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.winner-card h3 {
+    font-family: "Montserrat", sans-serif;
+
+    color: #d4af37;
+
+    margin-bottom: 18px;
+}
+
+
+.winner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.winner {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 16px;
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 10px;
+}
+
+
+.winner span {
+    font-weight: 600;
+}
+
+
+.winner strong {
+    color: #d4af37;
+}
+
+
+@media (max-width: 600px) {
+
+    .winner {
+        gap: 10px;
+    }
+
+}
