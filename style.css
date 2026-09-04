@@ -442,3 +442,100 @@ h1 {
     gap: 15px;
 
 }
+
+/* =========================
+   MEMBERS PAGE
+========================= */
+
+.members-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.member-card {
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(14px);
+
+    padding: 25px;
+
+}
+
+
+.member-card h2 {
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+
+}
+
+
+.member-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.member {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 16px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border-radius: 10px;
+
+}
+
+
+.member-name {
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+.member-role {
+
+    color: #d4af37;
+
+    font-size: 0.9rem;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .members-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
