@@ -1,9 +1,9 @@
 const notifications = [
-    "First Meeting: August 26",
-    "Sign Ups are out!",
+    "Next Meeting: Sept 9 - Location: MS Commons",
     "Website Under Development",
-    "Join the Club!",
-    "CREW on the 21st!",
+    "Puzzle of the Week 2 Due on Sept 8 at 5 PM",
+    "Next FNF on October 2nd",
+    "No school on September 11th!"
 ];
 
 let notificationIndex = 0;
