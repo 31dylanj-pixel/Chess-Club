@@ -490,6 +490,12 @@ h1 {
 
     gap: 12px;
 
+    max-height: 427px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+
 }
 
 
@@ -506,6 +512,8 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
 
     border-radius: 10px;
+
+    flex-shrink: 0;
 
 }
 
@@ -524,6 +532,38 @@ h1 {
     color: #d4af37;
 
     font-size: 0.9rem;
+
+}
+
+
+/* Scrollbar */
+
+.member-list::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.member-list::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+.member-list::-webkit-scrollbar-thumb {
+
+    background: rgba(212, 175, 55, 0.5);
+
+    border-radius: 10px;
+
+}
+
+
+.member-list::-webkit-scrollbar-thumb:hover {
+
+    background: #d4af37;
 
 }
 
