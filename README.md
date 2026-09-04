@@ -8,8 +8,6 @@ Official Chess Club Portal.
 
 - Leaderboard
 - Objectives
-- Teaching
-- Events
 - Settings
 - Members
 
@@ -18,5 +16,4 @@ Official Chess Club Portal.
 - Notifications
 - Member Spotlight
 - Upcoming Events
-- Account System (Planned)
 - Elo Leaderboard (Planned)
