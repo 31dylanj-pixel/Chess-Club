@@ -228,10 +228,10 @@ h1 {
 ========================= */
 
 .back-btn {
+    display: block;
+    width: fit-content;
 
-    display: inline-block;
-
-    margin-bottom: 30px;
+    margin: 0 auto 20px;
 
     padding: 10px 24px;
 
@@ -252,9 +252,7 @@ h1 {
     transition: all 0.25s ease;
 }
 
-
 .back-btn:hover {
-
     color: #f5d76e;
 
     border-color: #d4af37;
@@ -264,9 +262,7 @@ h1 {
     box-shadow: 0 0 20px rgba(212,175,55,0.25);
 
     transform: translateY(-3px);
-
 }
-
 /* =========================
    EVENTS TABLE
 ========================= */
