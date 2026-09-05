@@ -1,10 +1,27 @@
 const players = [
-    { name: "Dylan J.", points: 17 },
-    { name: "Malin", points: 24 },
-    { name: "Aliza", points: 12 },
-    { name: "John", points: 19 }
+    { name: "Nuno (Rhattee) Charnprasertkij", points: 0 },
+    { name: "Jaden Cockayne", points: 0 },
+    { name: "Malachi Elliott", points: 0 },
+    { name: "Isaac Fickett", points: 0 },
+    { name: "Levy (Natthadetch) Hengpongthorn", points: 0 },
+    { name: "Felix (Junyuan) Hu", points: 0 },
+    { name: "Tonnam (Putthima) Lertwirojkul", points: 0 },
+    { name: "Nate (Nacin) Limthongkul", points: 0 },
+    { name: "Aton (Aton) Liu", points: 0 },
+    { name: "Anna (Anna) Lo", points: 0 },
+    { name: "Micah (Micah) Lo", points: 0 },
+    { name: "SolRay (Nanon) Nivataphand", points: 0 },
+    { name: "Earng (Ploynapas) Pholsuwanchai", points: 0 },
+    { name: "Fenix Plunkett", points: 0 },
+    { name: "Ivan (Ivan David) Pulikkan", points: 0 },
+    { name: "Leo (Arlyn) Roteseree", points: 0 },
+    { name: "Grace (Nattha) Sakdibhornssup", points: 0 },
+    { name: "Bohden Sheridan", points: 0 },
+    { name: "Pete (Pitchya) Suwankeeree", points: 0 },
+    { name: "Penguin (Teetat) Tanakornkul", points: 0 },
+    { name: "Jerry (Zhengheng) Wen", points: 0 },
+    { name: "Vince (Vincent) Yodpijit", points: 0 }
 ];
-
 
 // =========================
 // SORT PLAYERS
