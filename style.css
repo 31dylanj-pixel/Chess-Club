@@ -894,3 +894,86 @@ h1 {
     color: #d4af37;
     font-size: 1.05rem;
 }
+
+/* =========================
+   PLAYER OF THE MONTH PERKS
+========================= */
+
+.perks-card {
+    text-align: left;
+}
+
+.perks-card h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.perks-intro {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.perks-table {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.perks-table > div {
+    padding: 15px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.perks-header {
+    text-align: center;
+
+    font-weight: 700;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+.potm-header {
+    color: #d4af37;
+}
+
+.perk-feature {
+    display: flex;
+
+    align-items: center;
+
+    line-height: 1.5;
+}
+
+.perk-yes,
+.perk-no {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 1.4rem;
+
+    font-weight: 700;
+}
+
+.perk-yes {
+    color: #6fcf97;
+}
+
+.perk-no {
+    color: #eb5757;
+}
