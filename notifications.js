@@ -3,7 +3,7 @@ const notifications = [
     "Website Under Development",
     "Puzzle of the Week 2 Due on Sept 15 at 5 PM",
     "Next FNF on October 2nd",
-    "No school on September 11th!"
+    "No school on September 11th!",
     "Make sure to look out for when Puzzle of the Month Comes Out!"
 ];
 
