@@ -22,106 +22,199 @@ const players = [
     { name: "Vince (Vincent) Yodpijit", points: 9 }
 ];
 
-// =========================
-// SORT PLAYERS
-// =========================
 
-players.sort((a, b) => b.points - a.points);
+/* ========================================
+   SORT PLAYERS
+======================================== */
 
-
-// =========================
-// PODIUM
-// =========================
-
-const podiumCards = document.querySelectorAll(".podium-card");
-
-podiumCards[0].querySelector("h2").textContent =
-    players[1]?.name || "Coming Soon";
-
-podiumCards[0].querySelector(".podium-points").textContent =
-    players[1] ? `${players[1].points} Points` : "-- Points";
+const rankedPlayers = [...players].sort((a, b) => b.points - a.points);
 
 
-podiumCards[1].querySelector("h2").textContent =
-    players[0]?.name || "Coming Soon";
-
-podiumCards[1].querySelector(".podium-points").textContent =
-    players[0] ? `${players[0].points} Points` : "-- Points";
-
-
-podiumCards[2].querySelector("h2").textContent =
-    players[2]?.name || "Coming Soon";
-
-podiumCards[2].querySelector(".podium-points").textContent =
-    players[2] ? `${players[2].points} Points` : "-- Points";
-
-
-// =========================
-// FULL RANKINGS
-// =========================
-
-const rankingsTable = document.querySelector(".rankings-table");
+/* ========================================
+   CALCULATE COMPETITION RANKS
+   Example:
+   10, 10, 8, 7, 7, 5
+   becomes:
+   1, 1, 3, 4, 4, 6
+======================================== */
 
 let previousPoints = null;
 let currentRank = 0;
 
-players.forEach((player, index) => {
+rankedPlayers.forEach((player, index) => {
 
     if (player.points !== previousPoints) {
         currentRank = index + 1;
     }
 
+    player.rank = currentRank;
+
+    previousPoints = player.points;
+});
+
+
+/* ========================================
+   PODIUM
+======================================== */
+
+const firstPlace = rankedPlayers.filter(player => player.rank === 1);
+const secondPlace = rankedPlayers.filter(player => player.rank === 2);
+const thirdPlace = rankedPlayers.filter(player => player.rank === 3);
+
+const firstCard = document.querySelector(".first-place");
+const secondCard = document.querySelector(".second-place");
+const thirdCard = document.querySelector(".third-place");
+
+
+function displayPodium(card, players, defaultText) {
+
+    if (!card) return;
+
+    if (players.length === 0) {
+        card.querySelector("h2").textContent = defaultText;
+        card.querySelector(".podium-points").textContent = "-- Points";
+        return;
+    }
+
+    const nameElement = card.querySelector("h2");
+    const pointsElement = card.querySelector(".podium-points");
+
+    nameElement.innerHTML = players
+        .map(player => player.name)
+        .join("<br>");
+
+    pointsElement.textContent =
+        `${players[0].points} Point${players[0].points === 1 ? "" : "s"}`;
+}
+
+
+displayPodium(firstCard, firstPlace, "Coming Soon");
+displayPodium(secondCard, secondPlace, "Coming Soon");
+displayPodium(thirdCard, thirdPlace, "Coming Soon");
+
+
+/* ========================================
+   RANKINGS TABLE
+======================================== */
+
+const rankingsTable = document.querySelector(".rankings-table");
+
+
+/*
+   Temporary point breakdowns.
+
+   These are currently 0 because your existing
+   player data only contains total points.
+
+   Later, you can replace these values with
+   the actual breakdown for each player.
+*/
+
+const defaultBreakdown = {
+    attendance: 0,
+    weeklyPuzzle: 0,
+    monthlyPuzzle: 0,
+    tournaments: 0
+};
+
+
+function createBreakdown(player) {
+
+    const breakdown = player.breakdown || defaultBreakdown;
+
+    return `
+        <div class="breakdown-item">
+            <span>Attendance</span>
+            <strong>+${breakdown.attendance}</strong>
+        </div>
+
+        <div class="breakdown-item">
+            <span>Weekly Puzzle</span>
+            <strong>+${breakdown.weeklyPuzzle}</strong>
+        </div>
+
+        <div class="breakdown-item">
+            <span>Monthly Puzzle</span>
+            <strong>+${breakdown.monthlyPuzzle}</strong>
+        </div>
+
+        <div class="breakdown-item">
+            <span>Tournaments</span>
+            <strong>+${breakdown.tournaments}</strong>
+        </div>
+    `;
+}
+
+
+/* ========================================
+   CREATE EACH PLAYER ROW
+======================================== */
+
+rankedPlayers.forEach(player => {
+
     const row = document.createElement("div");
+
     row.className = "ranking-player-row";
 
     row.innerHTML = `
-        <div class="ranking-row-rank">${currentRank}</div>
+        <div class="ranking-main">
 
-        <div class="ranking-row-player">
-            ${player.name}
-
-            <button class="points-dropdown-btn" type="button">
-                <span>View Points</span>
-                <span class="dropdown-arrow">▼</span>
-            </button>
-
-            <div class="points-breakdown">
-                <div>
-                    <span>Attendance</span>
-                    <strong>--</strong>
-                </div>
-
-                <div>
-                    <span>Puzzle of the Week</span>
-                    <strong>--</strong>
-                </div>
-
-                <div>
-                    <span>Monthly Puzzle</span>
-                    <strong>--</strong>
-                </div>
-
-                <div>
-                    <span>Tournaments</span>
-                    <strong>--</strong>
-                </div>
+            <div class="ranking-row-rank">
+                ${player.rank}
             </div>
+
+            <div class="ranking-row-player">
+                ${player.name}
+            </div>
+
+            <div class="ranking-row-points">
+                ${player.points}
+            </div>
+
+            <div class="ranking-expand">
+                ›
+            </div>
+
         </div>
 
-        <div class="ranking-row-points">
-            ${player.points}
+        <div class="points-breakdown">
+            ${createBreakdown(player)}
         </div>
     `;
 
-    rankingsTable.appendChild(row);
 
-    const dropdownButton = row.querySelector(".points-dropdown-btn");
-    const breakdown = row.querySelector(".points-breakdown");
+    /* ========================================
+       CLICK TO EXPAND
+    ======================================== */
 
-    dropdownButton.addEventListener("click", () => {
-        breakdown.classList.toggle("open");
-        dropdownButton.classList.toggle("open");
+    row.addEventListener("click", () => {
+
+        const isOpen = row.classList.contains("expanded");
+
+        /*
+           Close every other player first.
+           This keeps the leaderboard clean.
+        */
+
+        document
+            .querySelectorAll(".ranking-player-row.expanded")
+            .forEach(openRow => {
+
+                if (openRow !== row) {
+                    openRow.classList.remove("expanded");
+                }
+
+            });
+
+
+        /*
+           Toggle the clicked player.
+        */
+
+        row.classList.toggle("expanded", !isOpen);
+
     });
 
-    previousPoints = player.points;
+
+    rankingsTable.appendChild(row);
 });
