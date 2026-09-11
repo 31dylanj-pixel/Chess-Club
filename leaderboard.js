@@ -348,11 +348,14 @@ const topThreeContainer = document.getElementById("top-three");
 
 if (topThreeContainer) {
 
-    const topThreeRanks = [1, 2, 3];
-
     const medals = ["🥇", "🥈", "🥉"];
 
     topThreeContainer.innerHTML = "";
+
+    // Only display ranks that actually exist
+    const topThreeRanks = [1, 2, 3].filter(rank =>
+        rankedPlayers.some(player => player.rank === rank)
+    );
 
     topThreeRanks.forEach((rank, index) => {
 
@@ -364,44 +367,22 @@ if (topThreeContainer) {
 
         playerElement.className = "top-player";
 
-        if (playersAtRank.length === 0) {
+        playerElement.innerHTML = `
+            <span class="top-rank">
+                ${medals[index]}
+            </span>
 
-            playerElement.innerHTML = `
-                <span class="top-rank">
-                    ${medals[index]}
-                </span>
+            <span class="top-name">
+                ${playersAtRank
+                    .map(player => player.name)
+                    .join("<br>")}
+            </span>
 
-                <span class="top-name">
-                    None
-                </span>
-
-                <strong>
-                    --
-                </strong>
-            `;
-
-        } else {
-
-            playerElement.innerHTML = `
-                <span class="top-rank">
-                    ${medals[index]}
-                </span>
-
-                <span class="top-name">
-                    ${playersAtRank
-                        .map(player => player.name)
-                        .join("<br>")}
-                </span>
-
-                <strong>
-                    ${playersAtRank[0].points}
-                </strong>
-            `;
-
-        }
+            <strong>
+                ${playersAtRank[0].points}
+            </strong>
+        `;
 
         topThreeContainer.appendChild(playerElement);
-
     });
-
 }
