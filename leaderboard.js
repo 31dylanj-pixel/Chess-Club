@@ -67,17 +67,61 @@ let currentRank = 0;
 
 players.forEach((player, index) => {
 
-    // If the points are different from the previous player,
-    // their rank becomes their position in the list.
     if (player.points !== previousPoints) {
         currentRank = index + 1;
     }
 
-    rankingsTable.innerHTML += `
+    const row = document.createElement("div");
+    row.className = "ranking-player-row";
+
+    row.innerHTML = `
         <div class="ranking-row-rank">${currentRank}</div>
-        <div class="ranking-row-player">${player.name}</div>
-        <div class="ranking-row-points">${player.points}</div>
+
+        <div class="ranking-row-player">
+            ${player.name}
+
+            <button class="points-dropdown-btn" type="button">
+                <span>View Points</span>
+                <span class="dropdown-arrow">▼</span>
+            </button>
+
+            <div class="points-breakdown">
+                <div>
+                    <span>Attendance</span>
+                    <strong>--</strong>
+                </div>
+
+                <div>
+                    <span>Puzzle of the Week</span>
+                    <strong>--</strong>
+                </div>
+
+                <div>
+                    <span>Monthly Puzzle</span>
+                    <strong>--</strong>
+                </div>
+
+                <div>
+                    <span>Tournaments</span>
+                    <strong>--</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="ranking-row-points">
+            ${player.points}
+        </div>
     `;
+
+    rankingsTable.appendChild(row);
+
+    const dropdownButton = row.querySelector(".points-dropdown-btn");
+    const breakdown = row.querySelector(".points-breakdown");
+
+    dropdownButton.addEventListener("click", () => {
+        breakdown.classList.toggle("open");
+        dropdownButton.classList.toggle("open");
+    });
 
     previousPoints = player.points;
 });
