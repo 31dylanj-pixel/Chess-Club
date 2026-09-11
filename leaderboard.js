@@ -354,3 +354,46 @@ rankedPlayers.forEach(player => {
 
     rankingsTable.appendChild(row);
 });
+
+// ========================================
+// HOMEPAGE TOP 3
+// ========================================
+
+const topThreeContainer = document.getElementById("top-three");
+
+if (topThreeContainer) {
+
+    const rankedPlayers = [...players].sort(
+        (a, b) => b.points - a.points
+    );
+
+    const topThree = rankedPlayers.slice(0, 3);
+
+    const medals = ["🥇", "🥈", "🥉"];
+
+    topThreeContainer.innerHTML = "";
+
+    topThree.forEach((player, index) => {
+
+        const playerElement = document.createElement("div");
+
+        playerElement.className = "top-player";
+
+        playerElement.innerHTML = `
+            <span class="top-rank">
+                ${medals[index]}
+            </span>
+
+            <span class="top-name">
+                ${player.name}
+            </span>
+
+            <strong>
+                ${player.points}
+            </strong>
+        `;
+
+        topThreeContainer.appendChild(playerElement);
+
+    });
+}
