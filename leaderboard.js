@@ -19,7 +19,7 @@ const players = [
     { name: "Pete (Pitchya) Suwankeeree", points: 7 },
     { name: "Penguin (Teetat) Tanakornkul", points: 2 },
     { name: "Jerry (Zhengheng) Wen", points: 3 },
-    { name: "Vince (Vincent) Yodpijit", points: 5 }
+    { name: "Vince (Vincent) Yodpijit", points: 9 }
 ];
 
 // =========================
