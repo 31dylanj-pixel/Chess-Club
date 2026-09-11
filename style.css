@@ -1037,172 +1037,781 @@ h1 {
    RULES & POINTS
 ========================= */
 
-.rules-card {
-    text-align: left;
+.rules-overview,
+.rules-section,
+.rules-card,
+.rules-warning,
+.potm-card {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
-.rules-card h2,
-.points-card h2,
-.rules-warning h2 {
-    color: #d4af37;
-    margin-bottom: 20px;
+
+/* ========================================
+   SECTION HEADINGS
+======================================== */
+
+.rules-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
 }
 
-.rules-list {
-    padding-left: 25px;
+.rules-section-heading > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    font-size: 1.25rem;
+}
+
+.rules-section-heading h2 {
     margin: 0;
+    color: #d4af37;
+    font-family: "Montserrat", sans-serif;
 }
 
-.rules-list li {
+.rules-section-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   AT A GLANCE
+======================================== */
+
+.rules-overview {
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    box-sizing: border-box;
+}
+
+.overview-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.overview-header > span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    font-size: 1.3rem;
+}
+
+.overview-header h2 {
+
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.overview-header p {
+
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.85rem;
+}
+
+.overview-stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.overview-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 125px;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    text-align: center;
+}
+
+.overview-icon {
+
+    margin-bottom: 5px;
+
+    font-size: 1.15rem;
+}
+
+.overview-stat strong {
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+}
+
+.overview-stat > span:not(.overview-icon) {
+
+    margin-top: 7px;
+
+    font-weight: 600;
+
+    font-size: 0.85rem;
+}
+
+.overview-stat small {
+
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.7rem;
+}
+
+
+/* ========================================
+   POINTS SECTION
+======================================== */
+
+.rules-section {
+
+    margin-bottom: 35px;
+}
+
+.points-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.points-category {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    box-sizing: border-box;
+}
+
+.points-category-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
     margin-bottom: 15px;
-    line-height: 1.7;
 }
 
-.rules-list li:last-child {
+.points-category-header > span {
+
+    font-size: 1.15rem;
+}
+
+.points-category-header h3 {
+
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+}
+
+.points-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 44px;
+
+    padding: 9px 12px;
+
+    margin-bottom: 7px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    font-size: 0.85rem;
+}
+
+.points-row:last-child {
+
     margin-bottom: 0;
 }
 
-.rules-warning {
-    margin: 25px 0;
+.points-row strong {
+
+    flex-shrink: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   MEETING RULES
+======================================== */
+
+.rules-card {
+
+    margin-bottom: 35px;
 
     padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    text-align: left;
+}
+
+.numbered-rules {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.numbered-rule {
+
+    display: grid;
+
+    grid-template-columns: 48px minmax(0, 1fr);
+
+    gap: 15px;
+
+    padding: 16px;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.numbered-rule > span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+.numbered-rule h3 {
+
+    margin: 0 0 4px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.9rem;
+}
+
+.numbered-rule p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.6;
+
+    font-size: 0.82rem;
+}
+
+
+/* ========================================
+   RULE WARNING
+======================================== */
+
+.rules-warning {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
 
     background: rgba(255, 180, 0, 0.08);
 
     border: 1px solid rgba(212, 175, 55, 0.35);
 
-    border-radius: 20px;
-
-    text-align: left;
-
     backdrop-filter: blur(14px);
-}
 
-.rules-warning p {
-    line-height: 1.7;
-    margin: 0;
-}
-
-
-.points-card {
     text-align: left;
 }
 
-.points-category {
-    margin-bottom: 30px;
-}
+.warning-icon {
 
-.points-category:last-child {
-    margin-bottom: 0;
-}
-
-.points-category h3 {
-    color: #d4af37;
-    margin-bottom: 12px;
-}
-
-.points-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 13px 16px;
-
-    margin-bottom: 8px;
-
-    background: rgba(255,255,255,0.05);
-
-    border-radius: 10px;
-}
-
-.points-row strong {
-    color: #d4af37;
-    font-size: 1.05rem;
-}
-
-/* =========================
-   PLAYER OF THE MONTH PERKS
-========================= */
-
-.perks-card {
-    text-align: left;
-}
-
-.perks-card h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
-}
-
-.perks-intro {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.perks-table {
-    display: grid;
-
-    grid-template-columns:
-        2fr
-        1fr
-        1fr;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.perks-table > div {
-    padding: 15px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.08);
-}
-
-.perks-header {
-    text-align: center;
-
-    font-weight: 700;
-
-    background: rgba(255,255,255,0.08);
-
-    color: white;
-}
-
-.potm-header {
-    color: #d4af37;
-}
-
-.perk-feature {
     display: flex;
 
     align-items: center;
-
-    line-height: 1.5;
-}
-
-.perk-yes,
-.perk-no {
-    display: flex;
 
     justify-content: center;
 
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    font-size: 1.2rem;
+}
+
+.rules-warning h2 {
+
+    margin: 0 0 8px;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.rules-warning p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    line-height: 1.6;
+
+    font-size: 0.85rem;
+}
+
+.consequence-flow {
+
+    display: flex;
+
     align-items: center;
 
-    font-size: 1.4rem;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.consequence-flow span {
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+.consequence-flow span:nth-child(even) {
+
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    color: #d4af37;
+}
+
+
+/* ========================================
+   PUZZLE INFORMATION
+======================================== */
+
+.puzzle-info-card {
+
+    margin-bottom: 35px;
+}
+
+.puzzle-info-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.puzzle-info-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.puzzle-info-item > span {
+
+    font-size: 1.15rem;
+
+    flex-shrink: 0;
+}
+
+.puzzle-info-item h3 {
+
+    margin: 0 0 4px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.88rem;
+
+    color: #d4af37;
+}
+
+.puzzle-info-item p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.55;
+
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   PLAYER OF THE MONTH
+======================================== */
+
+.potm-card {
+
+    margin-bottom: 30px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    backdrop-filter: blur(16px);
+
+    text-align: center;
+}
+
+.potm-crown {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+
+    color: #d4af37;
+
+    font-size: 1.7rem;
+}
+
+.potm-card h2 {
+
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.5rem;
+}
+
+.potm-subtitle {
+
+    margin: 8px 0 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.9rem;
+}
+
+.potm-description {
+
+    max-width: 650px;
+
+    margin: 18px auto 25px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.6;
+
+    font-size: 0.85rem;
+}
+
+.potm-perks {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+.potm-perk {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.potm-perk > span {
+
+    color: #6fcf97;
+
+    font-size: 1.15rem;
 
     font-weight: 700;
 }
 
-.perk-yes {
-    color: #6fcf97;
+.potm-perk strong {
+
+    display: block;
+
+    font-size: 0.8rem;
 }
 
-.perk-no {
+.potm-perk small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.7rem;
+
+    line-height: 1.4;
+}
+
+.potm-perk.unavailable {
+
+    opacity: 0.65;
+}
+
+.potm-perk.unavailable > span {
+
     color: #eb5757;
 }
 
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .overview-stats {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .points-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .puzzle-info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .potm-perks {
+
+        grid-template-columns: 1fr;
+    }
+
+    .rules-card,
+    .rules-overview,
+    .rules-warning,
+    .potm-card {
+
+        padding: 20px;
+    }
+
+    .numbered-rule {
+
+        grid-template-columns: 40px minmax(0, 1fr);
+
+        gap: 10px;
+
+        padding: 13px;
+    }
+
+    .numbered-rule > span {
+
+        width: 36px;
+        height: 36px;
+    }
+
+}
 /* ========================================
    LEADERBOARD
 ======================================== */
