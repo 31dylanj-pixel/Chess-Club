@@ -1083,7 +1083,7 @@ h1 {
 
 .rankings-table {
     display: grid;
-    grid-template-columns: 100px 1fr 100px;
+    grid-template-columns: 100px 1fr 100px 45px;
 
     border-radius: 12px;
     overflow: hidden;
