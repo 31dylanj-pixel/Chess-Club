@@ -28,6 +28,13 @@ const players = [
     { name: "Vince (Vincent) Yodpijit", points: 9 }
 ];
 
+players.forEach(player => {
+    player.points =
+        player.attendance +
+        player.weeklyPuzzle +
+        player.monthlyPuzzle +
+        player.tournaments;
+});
 
 /* ========================================
    SORT PLAYERS
