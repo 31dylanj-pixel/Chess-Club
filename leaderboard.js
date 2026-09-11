@@ -233,6 +233,64 @@ displayPodium(thirdCard, thirdPlace, "None");
 
 const rankingsTable = document.querySelector(".rankings-table");
 
+if (rankingsTable) {
+
+    rankedPlayers.forEach(player => {
+
+        const row = document.createElement("div");
+
+        row.className = "ranking-player-row";
+
+        row.innerHTML = `
+            <div class="ranking-main">
+
+                <div class="ranking-row-rank">
+                    ${player.rank}
+                </div>
+
+                <div class="ranking-row-player">
+                    ${player.name}
+                </div>
+
+                <div class="ranking-row-points">
+                    ${player.points}
+                </div>
+
+                <div class="ranking-expand">
+                    ›
+                </div>
+
+            </div>
+
+            <div class="points-breakdown">
+                ${createBreakdown(player)}
+            </div>
+        `;
+
+        row.addEventListener("click", () => {
+
+            const isOpen = row.classList.contains("expanded");
+
+            document
+                .querySelectorAll(".ranking-player-row.expanded")
+                .forEach(openRow => {
+
+                    if (openRow !== row) {
+                        openRow.classList.remove("expanded");
+                    }
+
+                });
+
+            row.classList.toggle("expanded", !isOpen);
+
+        });
+
+        rankingsTable.appendChild(row);
+
+    });
+
+}
+
 
 /*
    Temporary point breakdowns.
@@ -282,79 +340,6 @@ function createBreakdown(player) {
     `;
 }
 
-/* ========================================
-   CREATE EACH PLAYER ROW
-======================================== */
-
-rankedPlayers.forEach(player => {
-
-    const row = document.createElement("div");
-
-    row.className = "ranking-player-row";
-
-    row.innerHTML = `
-        <div class="ranking-main">
-
-            <div class="ranking-row-rank">
-                ${player.rank}
-            </div>
-
-            <div class="ranking-row-player">
-                ${player.name}
-            </div>
-
-            <div class="ranking-row-points">
-                ${player.points}
-            </div>
-
-            <div class="ranking-expand">
-                ›
-            </div>
-
-        </div>
-
-        <div class="points-breakdown">
-            ${createBreakdown(player)}
-        </div>
-    `;
-
-
-    /* ========================================
-       CLICK TO EXPAND
-    ======================================== */
-
-    row.addEventListener("click", () => {
-
-        const isOpen = row.classList.contains("expanded");
-
-        /*
-           Close every other player first.
-           This keeps the leaderboard clean.
-        */
-
-        document
-            .querySelectorAll(".ranking-player-row.expanded")
-            .forEach(openRow => {
-
-                if (openRow !== row) {
-                    openRow.classList.remove("expanded");
-                }
-
-            });
-
-
-        /*
-           Toggle the clicked player.
-        */
-
-        row.classList.toggle("expanded", !isOpen);
-
-    });
-
-
-    rankingsTable.appendChild(row);
-});
-
 // ========================================
 // HOMEPAGE TOP 3
 // ========================================
@@ -363,37 +348,60 @@ const topThreeContainer = document.getElementById("top-three");
 
 if (topThreeContainer) {
 
-    const rankedPlayers = [...players].sort(
-        (a, b) => b.points - a.points
-    );
-
-    const topThree = rankedPlayers.slice(0, 3);
+    const topThreeRanks = [1, 2, 3];
 
     const medals = ["🥇", "🥈", "🥉"];
 
     topThreeContainer.innerHTML = "";
 
-    topThree.forEach((player, index) => {
+    topThreeRanks.forEach((rank, index) => {
+
+        const playersAtRank = rankedPlayers.filter(
+            player => player.rank === rank
+        );
 
         const playerElement = document.createElement("div");
 
         playerElement.className = "top-player";
 
-        playerElement.innerHTML = `
-            <span class="top-rank">
-                ${medals[index]}
-            </span>
+        if (playersAtRank.length === 0) {
 
-            <span class="top-name">
-                ${player.name}
-            </span>
+            playerElement.innerHTML = `
+                <span class="top-rank">
+                    ${medals[index]}
+                </span>
 
-            <strong>
-                ${player.points}
-            </strong>
-        `;
+                <span class="top-name">
+                    None
+                </span>
+
+                <strong>
+                    --
+                </strong>
+            `;
+
+        } else {
+
+            playerElement.innerHTML = `
+                <span class="top-rank">
+                    ${medals[index]}
+                </span>
+
+                <span class="top-name">
+                    ${playersAtRank
+                        .map(player => player.name)
+                        .join("<br>")}
+                </span>
+
+                <strong>
+                    ${playersAtRank[0].points}
+                </strong>
+            `;
+
+        }
 
         topThreeContainer.appendChild(playerElement);
 
     });
+
 }
