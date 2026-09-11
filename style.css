@@ -1194,6 +1194,103 @@ h1 {
 
 }
 
+/* =========================
+   POINTS DROPDOWN
+========================= */
+
+.ranking-player-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-column: 1 / -1;
+}
+
+.ranking-player-row > div {
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.ranking-player-row .ranking-row-rank,
+.ranking-player-row .ranking-row-player,
+.ranking-player-row .ranking-row-points {
+    padding: 15px;
+}
+
+.ranking-row-player {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.points-dropdown-btn {
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: rgba(255,255,255,0.65);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.points-dropdown-btn:hover {
+    background: rgba(212,175,55,0.12);
+    color: #d4af37;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.65rem;
+
+    transition: transform 0.2s ease;
+}
+
+.points-dropdown-btn.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.points-breakdown {
+    display: none;
+
+    width: 100%;
+    max-width: 400px;
+
+    margin-top: 4px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.points-breakdown.open {
+    display: block;
+}
+
+.points-breakdown div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 7px 5px;
+
+    font-size: 0.8rem;
+}
+
+.points-breakdown strong {
+    color: #d4af37;
+}
 
 /* MOBILE */
 
