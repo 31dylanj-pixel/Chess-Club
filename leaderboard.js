@@ -1,5 +1,11 @@
 const players = [
-    { name: "Nuno (Rhattee) Charnprasertkij", points: 6 },
+    { 
+        name: "Nuno (Rhattee) Charnprasertkij", 
+        attendance: 3,
+        weeklyPuzzle: 3,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     { name: "Jaden Cockayne", points: 2 },
     { name: "Malachi Elliott", points: 2 },
     { name: "Isaac Fickett", points: 4 },
@@ -23,9 +29,27 @@ const players = [
         monthlyPuzzle: 0,
         tournaments: 0
     },
-    { name: "Fenix Plunkett", points: 9 },
-    { name: "Ivan (Ivan David) Pulikkan", points: 4 },
-    { name: "Leo (Arlyn) Roteseree", points: 3 },
+    { 
+        name: "Fenix Plunkett", 
+        attendance: 3,
+        weeklyPuzzle: 5,
+        monthlyPuzzle: 1,
+        tournaments: 0
+    },
+    { 
+        name: "Ivan (Ivan David) Pulikkan", 
+        attendance: 3,
+        weeklyPuzzle: 1,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Leo (Arlyn) Roteseree", 
+        attendance: 1,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 2,
+        tournaments: 0
+    },
     { name: "Grace (Nattha) Sakdibhornssup", points: 8 },
     { 
         name: "Bohden Sheridan",
@@ -34,7 +58,13 @@ const players = [
         monthlyPuzzle: 0,
         tournaments: 0
     },
-    { name: "Pete (Pitchya) Suwankeeree", points: 7 },
+    { 
+        name: "Pete (Pitchya) Suwankeeree", 
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 5,
+        tournaments: 0
+    },
     { 
         name: "Penguin (Teetat) Tanakornkul",
         attendance: 2,
@@ -42,8 +72,20 @@ const players = [
         monthlyPuzzle: 0,
         tournaments: 0
     },
-    { name: "Jerry (Zhengheng) Wen", points: 3 },
-    { name: "Vince (Vincent) Yodpijit", points: 9 }
+    { 
+        name: "Jerry (Zhengheng) Wen", 
+        attendance: 3,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Vince (Vincent) Yodpijit", 
+        attendance: 3,
+        weeklyPuzzle: 3,
+        monthlyPuzzle: 3,
+        tournaments: 0
+    }
 ];
 
 //players.forEach(player => {
@@ -137,9 +179,9 @@ function displayPodium(card, players, defaultText) {
 }
 
 
-displayPodium(firstCard, firstPlace, "Coming Soon");
-displayPodium(secondCard, secondPlace, "Coming Soon");
-displayPodium(thirdCard, thirdPlace, "Coming Soon");
+displayPodium(firstCard, firstPlace, "None");
+displayPodium(secondCard, secondPlace, "None");
+displayPodium(thirdCard, thirdPlace, "None");
 
 
 /* ========================================
