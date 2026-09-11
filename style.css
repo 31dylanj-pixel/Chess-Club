@@ -1055,7 +1055,8 @@ h1 {
 ======================================== */
 
 .rules-section-heading {
-    display: flex;
+    display: grid;
+    grid-template-columns: 46px 1fr;
     align-items: center;
     gap: 14px;
     margin-bottom: 25px;
@@ -1069,14 +1070,16 @@ h1 {
     width: 46px;
     height: 46px;
 
-    flex-shrink: 0;
-
     border-radius: 14px;
 
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(212, 175, 55, 0.25);
 
     font-size: 1.25rem;
+}
+
+.rules-section-heading > div {
+    text-align: center;
 }
 
 .rules-section-heading h2 {
@@ -1087,12 +1090,9 @@ h1 {
 
 .rules-section-heading p {
     margin: 4px 0 0;
-
     color: rgba(255, 255, 255, 0.55);
-
     font-size: 0.85rem;
 }
-
 
 /* ========================================
    AT A GLANCE
