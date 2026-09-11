@@ -6,11 +6,41 @@ const players = [
         monthlyPuzzle: 0,
         tournaments: 0
     },
-    { name: "Jaden Cockayne", points: 2 },
-    { name: "Malachi Elliott", points: 2 },
-    { name: "Isaac Fickett", points: 4 },
-    { name: "Levy (Natthadetch) Hengpongthorn", points: 3 },
-    { name: "Tonnam (Putthima) Lertwirojkul", points: 2 },
+    { 
+        name: "Jaden Cockayne", 
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0 
+    },
+    { 
+        name: "Malachi Elliott", 
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Isaac Fickett",
+        attendance: 3,
+        weeklyPuzzle: 1,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Levy (Natthadetch) Hengpongthorn",
+        attendance: 2,
+        weeklyPuzzle: 1,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Tonnam (Putthima) Lertwirojkul",
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     {
         name: "Nate (Nacin) Limthongkul",
         attendance: 3,
@@ -18,10 +48,34 @@ const players = [
         monthlyPuzzle: 6,
         tournaments: 0
     },
-    { name: "Aton (Aton) Liu", points: 2 },
-    { name: "Anna (Anna) Lo", points: 3 },
-    { name: "Micah (Micah) Lo", points: 2 },
-    { name: "SolRay (Nanon) Nivataphand", points: 7 },
+    { 
+        name: "Aton (Aton) Liu", 
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Anna (Anna) Lo",
+        attendance: 2,
+        weeklyPuzzle: 1,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "Micah (Micah) Lo",
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
+    { 
+        name: "SolRay (Nanon) Nivataphand", 
+        attendance: 3,
+        weeklyPuzzle: 4,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     { 
         name: "Fenix Plunkett", 
         attendance: 3,
@@ -43,7 +97,13 @@ const players = [
         monthlyPuzzle: 2,
         tournaments: 0
     },
-    { name: "Grace (Nattha) Sakdibhornssup", points: 8 },
+    { 
+        name: "Grace (Nattha) Sakdibhornssup", 
+        attendance: 2,
+        weeklyPuzzle: 3,
+        monthlyPuzzle: 4,
+        tournaments: 0
+    },
     { 
         name: "Bohden Sheridan",
         attendance: 3,
@@ -81,18 +141,8 @@ const players = [
     }
 ];
 
-//players.forEach(player => {
-    //player.points =
-        //player.attendance +
-        //player.weeklyPuzzle +
-        //player.monthlyPuzzle +
-        //player.tournaments;
-//});
-
 players.forEach(player => {
 
-    // Only calculate the total if this player
-    // has the new point breakdown fields.
     if (
         player.attendance !== undefined &&
         player.weeklyPuzzle !== undefined &&
