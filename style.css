@@ -711,16 +711,26 @@ h1 {
 
 .members-grid {
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
 
-    gap: 25px;
+    gap: 30px;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
 
 }
 
 
 .member-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
 
     background: rgba(255, 255, 255, 0.08);
 
@@ -752,11 +762,11 @@ h1 {
 
     gap: 12px;
 
-    max-height: 427px;
+    padding-right: 0;
 
-    overflow-y: auto;
+    max-height: none;
 
-    padding-right: 5px;
+    overflow: visible;
 
 }
 
@@ -775,8 +785,6 @@ h1 {
 
     border-radius: 10px;
 
-    flex-shrink: 0;
-
 }
 
 
@@ -794,51 +802,6 @@ h1 {
     color: #d4af37;
 
     font-size: 0.9rem;
-
-}
-
-
-/* Scrollbar */
-
-.member-list::-webkit-scrollbar {
-
-    width: 6px;
-
-}
-
-
-.member-list::-webkit-scrollbar-track {
-
-    background: transparent;
-
-}
-
-
-.member-list::-webkit-scrollbar-thumb {
-
-    background: rgba(212, 175, 55, 0.5);
-
-    border-radius: 10px;
-
-}
-
-
-.member-list::-webkit-scrollbar-thumb:hover {
-
-    background: #d4af37;
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .members-grid {
-
-        grid-template-columns: 1fr;
-
-    }
 
 }
 
