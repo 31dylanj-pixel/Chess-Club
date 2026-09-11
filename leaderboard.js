@@ -7,8 +7,8 @@ const players = [
     { name: "Tonnam (Putthima) Lertwirojkul", points: 2 },
     {
         name: "Nate (Nacin) Limthongkul",
-        attendance: 2,
-        weeklyPuzzle: 2,
+        attendance: 3,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 6,
         tournaments: 0
     },
@@ -16,14 +16,32 @@ const players = [
     { name: "Anna (Anna) Lo", points: 3 },
     { name: "Micah (Micah) Lo", points: 2 },
     { name: "SolRay (Nanon) Nivataphand", points: 7 },
-    { name: "Earng (Ploynapas) Pholsuwanchai", points: 1 },
+    { 
+        name: "Earng (Ploynapas) Pholsuwanchai", 
+        attendance: 1,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     { name: "Fenix Plunkett", points: 9 },
     { name: "Ivan (Ivan David) Pulikkan", points: 4 },
     { name: "Leo (Arlyn) Roteseree", points: 3 },
     { name: "Grace (Nattha) Sakdibhornssup", points: 8 },
-    { name: "Bohden Sheridan", points: 3 },
+    { 
+        name: "Bohden Sheridan",
+        attendance: 3,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     { name: "Pete (Pitchya) Suwankeeree", points: 7 },
-    { name: "Penguin (Teetat) Tanakornkul", points: 2 },
+    { 
+        name: "Penguin (Teetat) Tanakornkul",
+        attendance: 2,
+        weeklyPuzzle: 0,
+        monthlyPuzzle: 0,
+        tournaments: 0
+    },
     { name: "Jerry (Zhengheng) Wen", points: 3 },
     { name: "Vince (Vincent) Yodpijit", points: 9 }
 ];
