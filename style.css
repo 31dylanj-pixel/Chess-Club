@@ -998,7 +998,7 @@ h1 {
 
 .podium {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: end;
     gap: 20px;
     margin-bottom: 45px;
@@ -1011,11 +1011,19 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px);
     text-align: center;
+
+    min-width: 0;
 }
 
 .podium-card h2 {
     margin: 10px 0;
-    line-height: 1.4;
+    line-height: 1.35;
+
+    /* Smaller names */
+    font-size: 1.15rem;
+
+    /* Prevent long names from stretching the card */
+    overflow-wrap: anywhere;
 }
 
 .podium-rank {
@@ -1037,6 +1045,10 @@ h1 {
     font-size: 3.5rem;
 }
 
+.first-place h2 {
+    font-size: 1.25rem;
+}
+
 .leader-label {
     display: inline-block;
     margin-top: 10px;
@@ -1056,7 +1068,6 @@ h1 {
 .third-place {
     transform: translateY(-5px);
 }
-
 
 /* ========================================
    RANKINGS SECTION
