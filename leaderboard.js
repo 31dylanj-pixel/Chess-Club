@@ -23,13 +23,6 @@ const players = [
     { name: "Micah (Micah) Lo", points: 2 },
     { name: "SolRay (Nanon) Nivataphand", points: 7 },
     { 
-        name: "Earng (Ploynapas) Pholsuwanchai", 
-        attendance: 1,
-        weeklyPuzzle: 0,
-        monthlyPuzzle: 0,
-        tournaments: 0
-    },
-    { 
         name: "Fenix Plunkett", 
         attendance: 3,
         weeklyPuzzle: 5,
