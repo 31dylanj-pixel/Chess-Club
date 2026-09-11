@@ -28,14 +28,32 @@ const players = [
     { name: "Vince (Vincent) Yodpijit", points: 9 }
 ];
 
-players.forEach(player => {
-    player.points =
-        player.attendance +
-        player.weeklyPuzzle +
-        player.monthlyPuzzle +
-        player.tournaments;
-});
+//players.forEach(player => {
+    //player.points =
+        //player.attendance +
+        //player.weeklyPuzzle +
+        //player.monthlyPuzzle +
+        //player.tournaments;
+//});
 
+players.forEach(player => {
+
+    // Only calculate the total if this player
+    // has the new point breakdown fields.
+    if (
+        player.attendance !== undefined &&
+        player.weeklyPuzzle !== undefined &&
+        player.monthlyPuzzle !== undefined &&
+        player.tournaments !== undefined
+    ) {
+        player.points =
+            player.attendance +
+            player.weeklyPuzzle +
+            player.monthlyPuzzle +
+            player.tournaments;
+    }
+
+});
 /* ========================================
    SORT PLAYERS
 ======================================== */
@@ -133,31 +151,33 @@ const defaultBreakdown = {
 
 function createBreakdown(player) {
 
-    const breakdown = player.breakdown || defaultBreakdown;
+    const attendance = player.attendance ?? 0;
+    const weeklyPuzzle = player.weeklyPuzzle ?? 0;
+    const monthlyPuzzle = player.monthlyPuzzle ?? 0;
+    const tournaments = player.tournaments ?? 0;
 
     return `
         <div class="breakdown-item">
             <span>Attendance</span>
-            <strong>+${breakdown.attendance}</strong>
+            <strong>+${attendance}</strong>
         </div>
 
         <div class="breakdown-item">
             <span>Weekly Puzzle</span>
-            <strong>+${breakdown.weeklyPuzzle}</strong>
+            <strong>+${weeklyPuzzle}</strong>
         </div>
 
         <div class="breakdown-item">
             <span>Monthly Puzzle</span>
-            <strong>+${breakdown.monthlyPuzzle}</strong>
+            <strong>+${monthlyPuzzle}</strong>
         </div>
 
         <div class="breakdown-item">
             <span>Tournaments</span>
-            <strong>+${breakdown.tournaments}</strong>
+            <strong>+${tournaments}</strong>
         </div>
     `;
 }
-
 
 /* ========================================
    CREATE EACH PLAYER ROW
