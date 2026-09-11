@@ -974,322 +974,380 @@ h1 {
     color: #eb5757;
 }
 
-/* =========================
+/* ========================================
    LEADERBOARD
-========================= */
+======================================== */
 
 .season-label {
-
     display: inline-block;
-
     margin: 5px auto 35px;
-
     padding: 8px 18px;
-
     border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.08);
+    color: #d4af37;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
 
-    border: 1px solid rgba(212,175,55,0.5);
 
-    background: rgba(212,175,55,0.08);
+/* ========================================
+   PODIUM
+======================================== */
 
+.podium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.podium-card {
+    padding: 25px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    text-align: center;
+}
+
+.podium-card h2 {
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.podium-rank {
+    font-size: 2.5rem;
+}
+
+.podium-points {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+.first-place {
+    padding: 35px 20px;
+    border-color: rgba(212, 175, 55, 0.7);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.first-place .podium-rank {
+    font-size: 3.5rem;
+}
+
+.leader-label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.second-place {
+    transform: translateY(-10px);
+}
+
+.third-place {
+    transform: translateY(-5px);
+}
+
+
+/* ========================================
+   RANKINGS SECTION
+======================================== */
+
+.rankings-section {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(14px);
+    margin-bottom: 30px;
+}
+
+.rankings-section h2 {
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.rankings-table {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Header */
+
+.ranking-header {
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   PLAYER ROW
+======================================== */
+
+.ranking-player-row {
+    grid-column: 1 / -1;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================
+   MAIN CLOSED ROW
+======================================== */
+
+.ranking-main {
+    display: grid;
+
+    grid-template-columns: 100px 1fr 100px 45px;
+
+    align-items: center;
+
+    min-height: 62px;
+
+    transition: background 0.2s ease;
+}
+
+
+.ranking-player-row:hover .ranking-main {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ========================================
+   RANK
+======================================== */
+
+.ranking-row-rank {
+    padding: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   PLAYER NAME
+======================================== */
+
+.ranking-row-player {
+    padding: 15px;
+
+    font-weight: 500;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   POINTS
+======================================== */
+
+.ranking-row-points {
+    padding: 15px;
+
+    color: #d4af37;
+
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* ========================================
+   EXPAND ARROW
+======================================== */
+
+.ranking-expand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    font-size: 1.5rem;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.ranking-player-row:hover .ranking-expand {
+    color: #d4af37;
+}
+
+
+/* Rotate arrow when opened */
+
+.ranking-player-row.expanded .ranking-expand {
+    transform: rotate(90deg);
+
+    color: #d4af37;
+}
+
+
+/* ========================================
+   POINT BREAKDOWN
+======================================== */
+
+.points-breakdown {
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 25px;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Open state */
+
+.ranking-player-row.expanded .points-breakdown {
+    max-height: 300px;
+
+    padding: 15px 25px 20px;
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   BREAKDOWN ITEMS
+======================================== */
+
+.breakdown-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+
+.breakdown-item span {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 0.9rem;
+}
+
+
+.breakdown-item strong {
     color: #d4af37;
 
     font-family: "Montserrat", sans-serif;
 
     font-size: 0.9rem;
-
-    font-weight: 700;
-
 }
 
 
-/* PODIUM */
+/* ========================================
+   OPEN ROW
+======================================== */
 
-.podium {
+.ranking-player-row.expanded {
+    background: rgba(255, 255, 255, 0.025);
 
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    align-items: end;
-
-    gap: 20px;
-
-    margin-bottom: 45px;
-
+    box-shadow:
+        inset 3px 0 0 rgba(212, 175, 55, 0.65);
 }
 
 
-.podium-card {
+/* ========================================
+   MOBILE
+======================================== */
 
-    padding: 25px 20px;
+@media (max-width: 700px) {
 
-    border-radius: 18px;
+    .podium {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
 
-    background: rgba(255,255,255,0.08);
+    .first-place {
+        order: -1;
+    }
 
-    border: 1px solid rgba(255,255,255,0.12);
+    .second-place,
+    .third-place {
+        transform: none;
+    }
 
-    backdrop-filter: blur(14px);
 
-    text-align: center;
+    .rankings-table {
+        grid-template-columns: 65px 1fr 75px;
+    }
 
-}
 
+    .ranking-main {
+        grid-template-columns: 65px 1fr 75px 40px;
+    }
 
-.podium-card h2 {
 
-    margin: 10px 0;
+    .ranking-row-player {
+        overflow-wrap: anywhere;
+    }
 
-}
 
+    .points-breakdown {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-.podium-rank {
 
-    font-size: 2.5rem;
+    .ranking-player-row.expanded .points-breakdown {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-}
-
-
-.podium-points {
-
-    color: #d4af37;
-
-    font-weight: 700;
-
-}
-
-
-/* FIRST PLACE */
-
-.first-place {
-
-    padding: 35px 20px;
-
-    border-color: rgba(212,175,55,0.7);
-
-    box-shadow: 0 0 30px rgba(212,175,55,0.15);
-
-}
-
-
-.first-place .podium-rank {
-
-    font-size: 3.5rem;
-
-}
-
-
-.leader-label {
-
-    display: inline-block;
-
-    margin-top: 10px;
-
-    padding: 5px 10px;
-
-    border-radius: 999px;
-
-    background: rgba(212,175,55,0.15);
-
-    color: #d4af37;
-
-    font-size: 0.7rem;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* SECOND & THIRD */
-
-.second-place {
-
-    transform: translateY(-10px);
-
-}
-
-
-.third-place {
-
-    transform: translateY(-5px);
-
-}
-
-
-/* RANKINGS */
-
-.rankings-section {
-
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    border-radius: 20px;
-
-    padding: 25px;
-
-    backdrop-filter: blur(14px);
-
-    margin-bottom: 30px;
-
-}
-
-
-.rankings-section h2 {
-
-    color: #d4af37;
-
-    margin-bottom: 25px;
-
-}
-
-
-.rankings-table {
-
-    display: grid;
-
-    grid-template-columns: 100px 1fr 100px;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-}
-
-
-.ranking-header {
-
-    padding: 15px;
-
-    background: rgba(255,255,255,0.08);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 700;
-
-}
-
-
-.ranking-row-rank,
-.ranking-row-player,
-.ranking-row-points {
-
-    padding: 15px;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-}
-
-
-.ranking-row-points {
-
-    color: #d4af37;
-
-    font-weight: 700;
-
-}
-
-/* =========================
-   POINTS DROPDOWN
-========================= */
-
-.ranking-player-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    grid-column: 1 / -1;
-}
-
-.ranking-player-row > div {
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.ranking-player-row .ranking-row-rank,
-.ranking-player-row .ranking-row-player,
-.ranking-player-row .ranking-row-points {
-    padding: 15px;
-}
-
-.ranking-row-player {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.points-dropdown-btn {
-    width: fit-content;
-
-    padding: 5px 10px;
-
-    border: none;
-    border-radius: 999px;
-
-    background: rgba(255,255,255,0.06);
-
-    color: rgba(255,255,255,0.65);
-
-    font-family: inherit;
-    font-size: 0.75rem;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.points-dropdown-btn:hover {
-    background: rgba(212,175,55,0.12);
-    color: #d4af37;
-}
-
-.dropdown-arrow {
-    display: inline-block;
-    margin-left: 5px;
-    font-size: 0.65rem;
-
-    transition: transform 0.2s ease;
-}
-
-.points-dropdown-btn.open .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-.points-breakdown {
-    display: none;
-
-    width: 100%;
-    max-width: 400px;
-
-    margin-top: 4px;
-
-    padding: 10px;
-
-    border-radius: 10px;
-
-    background: rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.06);
-}
-
-.points-breakdown.open {
-    display: block;
-}
-
-.points-breakdown div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 7px 5px;
-
-    font-size: 0.8rem;
-}
-
-.points-breakdown strong {
-    color: #d4af37;
 }
 
 /* MOBILE */
