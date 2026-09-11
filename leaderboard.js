@@ -5,7 +5,13 @@ const players = [
     { name: "Isaac Fickett", points: 4 },
     { name: "Levy (Natthadetch) Hengpongthorn", points: 3 },
     { name: "Tonnam (Putthima) Lertwirojkul", points: 2 },
-    { name: "Nate (Nacin) Limthongkul", points: 10 },
+    {
+        name: "Nate (Nacin) Limthongkul",
+        attendance: 2,
+        weeklyPuzzle: 2,
+        monthlyPuzzle: 6,
+        tournaments: 0
+    },
     { name: "Aton (Aton) Liu", points: 2 },
     { name: "Anna (Anna) Lo", points: 3 },
     { name: "Micah (Micah) Lo", points: 2 },
