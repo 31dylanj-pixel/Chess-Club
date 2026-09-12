@@ -1129,102 +1129,396 @@ h1 {
    MEMBERS PAGE
 ========================= */
 
-.members-grid {
 
+/* ========================================
+   SHARED SECTION
+======================================== */
+
+.members-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 35px;
+}
+
+.members-section-heading {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.members-heading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    color: #d4af37;
+
+    font-size: 1.25rem;
+}
+
+.members-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.members-section-heading h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.2rem;
+}
+
+.members-section-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   LEADERSHIP
+======================================== */
+
+.leadership-section {
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    backdrop-filter: blur(16px);
+}
+
+.leadership-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.leader-card {
     display: flex;
 
     flex-direction: column;
 
-    gap: 30px;
+    align-items: center;
 
-    width: 100%;
+    justify-content: center;
 
-    max-width: 1000px;
+    min-height: 145px;
 
-    margin: 0 auto;
+    padding: 18px;
 
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(212, 175, 55, 0.16);
+
+    text-align: center;
+}
+
+.leader-card.advisor {
+    border-color: rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.leader-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    color: #d4af37;
+
+    font-size: 1.3rem;
+}
+
+.leader-info h3 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.95rem;
+}
+
+.leader-role {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #d4af37;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
 }
 
 
-.member-card {
+/* ========================================
+   MEMBER ROSTER
+======================================== */
+
+.members-roster {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
 
     width: 100%;
 
+    padding: 20px;
+
     box-sizing: border-box;
+
+    border-radius: 20px;
 
     background: rgba(255, 255, 255, 0.08);
 
     border: 1px solid rgba(255, 255, 255, 0.12);
 
-    border-radius: 20px;
-
     backdrop-filter: blur(14px);
+}
 
-    padding: 25px;
+.roster-member {
+    display: grid;
 
+    grid-template-columns: 36px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 52px;
+
+    padding: 8px 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.member-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    color: rgba(212, 175, 55, 0.7);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+}
+
+.member-name {
+    min-width: 0;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
 }
 
 
-.member-card h2 {
+/* ========================================
+   SUMMARY
+======================================== */
 
-    color: #d4af37;
+.members-summary {
+    display: flex;
 
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
 
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    background: rgba(212, 175, 55, 0.07);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
 }
 
-
-.member-list {
-
+.summary-item {
     display: flex;
 
     flex-direction: column;
 
-    gap: 12px;
-
-    padding-right: 0;
-
-    max-height: none;
-
-    overflow: visible;
-
-}
-
-
-.member {
-
-    display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
 
-    padding: 13px 16px;
+    justify-content: center;
 
-    background: rgba(255, 255, 255, 0.05);
+    min-width: 130px;
 
-    border-radius: 10px;
-
+    text-align: center;
 }
 
-
-.member-name {
-
-    font-family: "Poppins", sans-serif;
-
-    font-weight: 600;
-
-}
-
-
-.member-role {
-
+.summary-item strong {
     color: #d4af37;
 
-    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.35rem;
+}
+
+.summary-item span {
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.7rem;
+}
+
+.summary-divider {
+    width: 1px;
+
+    height: 35px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .leadership-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .members-roster {
+        grid-template-columns: 1fr;
+    }
 
 }
 
+
+@media (max-width: 550px) {
+
+    .leadership-section {
+        padding: 20px;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-card {
+        min-height: 110px;
+
+        flex-direction: row;
+
+        justify-content: flex-start;
+
+        gap: 14px;
+
+        text-align: left;
+    }
+
+    .leader-icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .members-roster {
+        padding: 12px;
+    }
+
+    .members-summary {
+        gap: 10px;
+    }
+
+    .summary-item {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .summary-divider {
+        height: 30px;
+    }
+
+}
 /* =========================
    FOOTER
 ========================= */
