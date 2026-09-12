@@ -1342,113 +1342,492 @@ h1 {
    PUZZLE WINNERS
 ========================= */
 
-.latest-winner {
-    max-width: 900px;
-    margin: 0 auto 40px;
 
-    padding: 30px;
+/* ========================================
+   LATEST RESULTS
+======================================== */
 
-    text-align: center;
+.latest-results {
+    width: 100%;
+    max-width: 1000px;
 
-    background: rgba(255,255,255,0.08);
+    margin: 0 auto 35px;
+    padding: 25px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    box-sizing: border-box;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
-    backdrop-filter: blur(14px);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    backdrop-filter: blur(16px);
 }
 
-.latest-winner h2 {
+.latest-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+.latest-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    font-size: 1.25rem;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 3px;
+
     color: #d4af37;
-    margin-bottom: 10px;
-}
 
-.latest-puzzle {
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 15px;
-}
-
-.latest-name {
     font-family: "Montserrat", sans-serif;
 
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 0.65rem;
+    font-weight: 700;
 
-    color: white;
+    letter-spacing: 2px;
 }
 
+.latest-header h2 {
+    margin: 0;
 
-.winner-archive {
-    max-width: 900px;
-    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.15rem;
 }
 
-.winner-archive > h2 {
+.latest-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.latest-result {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+}
+
+.result-type {
+    color: rgba(255, 255, 255, 0.45);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.result-winner {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    font-size: 1.1rem;
+}
+
+.result-winner strong {
     color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.25rem;
+}
+
+.result-details {
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.72rem;
+}
+
+.result-details span {
+    margin: 0 4px;
+}
+
+
+/* ========================================
+   SECTION HEADINGS
+======================================== */
+
+.winner-section {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+}
+
+.section-heading {
+    display: grid;
+
+    grid-template-columns: 46px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+
     margin-bottom: 20px;
 }
 
+.heading-icon {
+    display: flex;
 
-.winner-card {
-    background: rgba(255,255,255,0.08);
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    width: 46px;
+    height: 46px;
 
-    border-radius: 20px;
+    border-radius: 14px;
 
-    backdrop-filter: blur(14px);
+    background: rgba(212, 175, 55, 0.1);
 
-    padding: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
 
-    margin-bottom: 25px;
+    font-size: 1.25rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.15rem;
+}
+
+.section-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.8rem;
 }
 
 
-.winner-card h3 {
-    font-family: "Montserrat", sans-serif;
+/* ========================================
+   WINNER CARDS
+======================================== */
 
-    color: #d4af37;
+.winner-card {
+    margin-bottom: 18px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 19px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+}
+
+.winner-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
 
     margin-bottom: 18px;
 }
 
+.winner-number {
+    display: block;
 
-.winner-list {
-    display: flex;
-    flex-direction: column;
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.winner-card-header h3 {
+    margin: 3px 0 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+}
+
+.winner-badge {
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    color: #d4af37;
+
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* ========================================
+   PODIUM
+======================================== */
+
+.podium-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 10px;
 }
 
-
-.winner {
+.podium-player {
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 105px;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    text-align: center;
+}
+
+.podium-player.first {
+    background: rgba(212, 175, 55, 0.09);
+
+    border-color: rgba(212, 175, 55, 0.22);
+}
+
+.podium-medal {
+    font-size: 1.4rem;
+
+    margin-bottom: 5px;
+}
+
+.podium-player strong {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.9rem;
+}
+
+.podium-player small {
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.65rem;
+}
+
+
+/* ========================================
+   OTHER PLACEMENTS
+======================================== */
+
+.other-winners {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.other-winner {
+    display: flex;
+
     align-items: center;
 
-    padding: 13px 16px;
+    gap: 8px;
 
-    background: rgba(255,255,255,0.05);
+    min-height: 36px;
 
-    border-radius: 10px;
+    padding: 7px 11px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    font-size: 0.72rem;
 }
 
+.other-winner span {
+    color: rgba(255, 255, 255, 0.45);
 
-.winner span {
-    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+    font-weight: 700;
 }
 
+.other-winner strong {
+    color: rgba(255, 255, 255, 0.8);
 
-.winner strong {
+    font-weight: 500;
+}
+
+.other-winner.honorable {
+    flex: 1;
+    min-width: 220px;
+}
+
+.other-winner.honorable span {
     color: #d4af37;
 }
 
 
-@media (max-width: 600px) {
+/* ========================================
+   CLOSING
+======================================== */
 
-    .winner {
-        gap: 10px;
+.winners-closing {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 30px;
+
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background: rgba(212, 175, 55, 0.07);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    text-align: left;
+}
+
+.winners-closing > span {
+    color: #d4af37;
+
+    font-size: 1.3rem;
+}
+
+.winners-closing strong {
+    display: block;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.85rem;
+}
+
+.winners-closing p {
+    margin: 3px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .latest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .podium-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .podium-player {
+        min-height: 80px;
+    }
+
+    .winner-card {
+        padding: 18px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .latest-results {
+        padding: 20px;
+    }
+
+    .winner-card-header {
+        align-items: flex-start;
+    }
+
+    .other-winner.honorable {
+        min-width: 100%;
     }
 
 }
