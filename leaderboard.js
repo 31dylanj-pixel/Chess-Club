@@ -108,7 +108,7 @@ const players = [
         name: "Bohden Sheridan",
         attendance: 3,
         weeklyPuzzle: 0,
-        monthlyPuzzle: 0,
+        monthlyPuzzle: 1,
         tournaments: 0
     },
     { 
