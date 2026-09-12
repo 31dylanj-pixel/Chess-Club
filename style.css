@@ -1371,12 +1371,23 @@ h1 {
 }
 
 .latest-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 46px 1fr 46px;
     align-items: center;
 
     gap: 14px;
 
     margin-bottom: 22px;
+}
+
+.latest-header > div:last-child {
+    text-align: center;
+}
+
+.latest-header::after {
+    content: "";
+    width: 46px;
+    height: 46px;
 }
 
 .latest-icon {
