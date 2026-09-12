@@ -407,6 +407,8 @@ h1 {
 }
 
 
+/* Trophy stays on the left */
+
 .player-month-icon {
     display: flex;
 
@@ -429,6 +431,8 @@ h1 {
     font-size: 2.3rem;
 }
 
+
+/* Content stays centered */
 
 .player-month-content {
     min-width: 0;
@@ -469,8 +473,6 @@ h1 {
     font-size: 0.8rem;
 }
 
-
-/* Player stats */
 
 .player-month-stats {
     display: flex;
