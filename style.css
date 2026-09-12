@@ -480,13 +480,433 @@ h1 {
    OBJECTIVES PAGE
 ========================= */
 
-.objective-card h2 {
-    text-align: center;
+
+/* ========================================
+   MISSION
+======================================== */
+
+.objectives-mission {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    backdrop-filter: blur(16px);
+
+    text-align: left;
 }
 
-.objective-card p {
+.mission-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    border-radius: 18px;
+
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    color: #d4af37;
+
+    font-size: 1.8rem;
+}
+
+.mission-content {
+    min-width: 0;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.mission-content h2 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.5rem;
+}
+
+.mission-content p {
+    max-width: 700px;
+
+    margin: 7px 0 0;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   SECTION HEADINGS
+======================================== */
+
+.objectives-section,
+.objectives-vision {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+}
+
+.objectives-heading {
+    display: grid;
+
+    grid-template-columns: 46px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.heading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    font-size: 1.25rem;
+}
+
+.objectives-heading h2 {
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.2rem;
+}
+
+.objectives-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.82rem;
+}
+
+
+/* ========================================
+   OBJECTIVE CARDS
+======================================== */
+
+.objectives-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.objective-box {
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
     text-align: left;
-    line-height: 1.7;
+}
+
+.objective-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 15px;
+
+    border-radius: 13px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.2);
+
+    font-size: 1.2rem;
+}
+
+.objective-box h3 {
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+}
+
+.objective-box > p {
+    margin: 7px 0 18px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.objective-goals {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.objective-goal {
+    display: grid;
+
+    grid-template-columns: 20px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 8px;
+
+    padding: 9px 10px;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    font-size: 0.76rem;
+
+    line-height: 1.45;
+}
+
+.objective-goal > span:first-child {
+    color: #d4af37;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   VISION
+======================================== */
+
+.objectives-vision {
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+}
+
+.vision-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.vision-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vision-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.vision-item h3 {
+    margin: 0 0 5px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.85rem;
+}
+
+.vision-item p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.76rem;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   CLOSING
+======================================== */
+
+.objectives-closing {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 30px;
+
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background: rgba(212, 175, 55, 0.07);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    text-align: left;
+}
+
+.objectives-closing > span {
+    color: #d4af37;
+
+    font-size: 1.3rem;
+}
+
+.objectives-closing strong {
+    display: block;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.85rem;
+}
+
+.objectives-closing p {
+    margin: 3px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .objectives-mission {
+        padding: 22px;
+    }
+
+    .mission-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .mission-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .objectives-vision {
+        padding: 20px;
+    }
+
 }
 
 /* =========================
