@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Chess Club</title>
 
     <link rel="icon" type="image/png" href="favicon.png">
-    
+
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
@@ -19,8 +23,15 @@
 
     <main class="container">
 
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
         <h1>♔ Chess Club</h1>
-        <p class="tagline">Think. Plan. Checkmate.</p>
+
+        <p class="tagline">
+            Think. Plan. Checkmate.
+        </p>
 
         <a
             class="url-btn"
@@ -29,169 +40,571 @@
         >
             📚 Google Classroom
         </a>
-        
-        <section class="info-card" id="notifications">
-
-            <h2>📢 Announcements</h2>
-
-            <p id="notification-text"></p>
-
-        </section>
 
 
-        <section class="info-card" id="spotlight">
-
-            <h2>♔ Member Spotlight</h2>
-
-            <p>Player of the Month: Coming Soon</p>
-
-        </section>
+        <!-- ========================================
+             HOMEPAGE DASHBOARD
+        ========================================= -->
 
         <section class="homepage-dashboard">
 
+
             <!-- CURRENT TOP 3 -->
+
             <div class="dashboard-card">
-        
+
                 <h2>🏆 Current Top 3</h2>
-        
+
                 <div id="top-three">
-                    <p class="dashboard-loading">Loading...</p>
+                    <p class="dashboard-loading">
+                        Loading...
+                    </p>
                 </div>
-        
-                <a href="leaderboard.html" class="dashboard-link">
+
+                <a
+                    href="leaderboard.html"
+                    class="dashboard-link"
+                >
                     View Leaderboard →
                 </a>
-        
+
             </div>
-        
-        
+
+
             <!-- NEXT MEETING -->
+
             <div class="dashboard-card">
-        
+
                 <h2>♟ Next Chess Meeting</h2>
-        
+
                 <div class="next-meeting">
-        
+
                     <div class="meeting-date">
+
                         <span>SEP</span>
+
                         <strong>16</strong>
+
                     </div>
-        
+
                     <div class="meeting-info">
-                        <strong>Chess Club Meeting</strong>
-                        <span>MS 407</span>
-                        <span>2:30 PM</span>
+
+                        <strong>
+                            Chess Club Meeting
+                        </strong>
+
+                        <span>
+                            MS 407
+                        </span>
+
+                        <span>
+                            2:30 PM
+                        </span>
+
                     </div>
-        
+
                 </div>
-        
+
                 <div class="meeting-status">
                     Upcoming Meeting
                 </div>
-        
+
             </div>
-        
+
         </section>
-        
-        <section class="info-card" id="upcoming-events">
 
-            <h2>📅 Upcoming Events</h2>
-        
-            <div class="events-table">
-        
-                <div class="event-header">Type</div>
-                <div class="event-header">Event</div>
-                <div class="event-header">Date</div>
-                
-                <div>School</div>
-                <div>No School (Staff Family Day)</div>
-                <div>Sept 11</div>
 
-                <div>Chess Club</div>
-                <div>Puzzle of the Week 3 Due</div>
-                <div>Sept 15</div>
-                
-                <div>Chess Club</div>
-                <div>Meeting @MS 407</div>
-                <div>Sept 16</div>
-                
-                <div>CREW</div>
-                <div>CREW #2</div>
-                <div>Sept 18</div>
+        <!-- ========================================
+             PLAYER OF THE MONTH
+        ========================================= -->
 
-                <div>School</div>
-                <div>No School (Teacher In Service Day)</div>
-                <div>Sept 25</div>
+        <section class="player-month">
 
-                <div>FNF</div>
-                <div>TBD</div>
-                <div>Oct 2</div>
-        
+            <div class="player-month-icon">
+                🏆
             </div>
-        
-        </section>
 
+            <div class="player-month-content">
 
-        <section class="grid">
+                <span class="player-month-label">
+                    PLAYER OF THE MONTH
+                </span>
 
+                <h2>
+                    Nate
+                </h2>
 
-            <a class="nav-card" href="leaderboard.html">
-                <h2>🏆 Leaderboard</h2>
-                <p>Rankings and player statistics.</p>
-            </a>
+                <p class="player-month-date">
+                    September 2026
+                </p>
 
+                <div class="player-month-stats">
 
-            <a class="nav-card" href="objectives.html">
-                <h2>🎯 Objectives</h2>
-                <p>Club goals and mission.</p>
-            </a>
+                    <div>
+                        <strong>10</strong>
+                        <span>Points</span>
+                    </div>
 
-            <!-- <a class="nav-card" href="lessons.html">
-                <h2>♟ Lessons</h2>
-                <p>Learn about different aspects of Chess. <br> [BETA]</p>
-            </a> -->
+                    <div class="player-month-divider"></div>
 
-            <a class="nav-card" href="rules.html">
-                <h2>📜 Rules & Points</h2>
-                <p>Club rules and how to earn points.</p>
-            </a>
-            
-            <a class="nav-card" href="puzzle-winners.html">
-                <h2>🏆 Puzzle Winners</h2>
-                <p>Current and past winners of the Puzzle of the Week/Month.</p>
-            </a>
+                    <div>
+                        <strong>#1</strong>
+                        <span>Current Rank</span>
+                    </div>
 
+                </div>
 
-            <a class="nav-card" href="members.html">
-                <h2>👥 Members</h2>
-                <p>View the Members within Chess Club.</p>
-            </a>
+                <p class="player-month-description">
+                    Recognized for outstanding performance and
+                    participation this month.
+                </p>
 
+            </div>
 
         </section>
 
+
+        <!-- ========================================
+             UPCOMING EVENTS
+        ========================================= -->
+
+        <section class="events-section">
+
+            <div class="homepage-section-heading">
+
+                <div class="homepage-heading-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <span class="homepage-section-label">
+                        WHAT'S COMING UP
+                    </span>
+
+                    <h2>
+                        Upcoming Events
+                    </h2>
+
+                    <p>
+                        Stay up to date with Chess Club and school events.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="events-list">
+
+
+                <!-- EVENT 1 -->
+
+                <div class="homepage-event">
+
+                    <div class="event-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            15
+                        </strong>
+
+                    </div>
+
+                    <div class="event-details">
+
+                        <span class="event-type chess">
+                            CHESS CLUB
+                        </span>
+
+                        <h3>
+                            Puzzle of the Week 3 Due
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 2 -->
+
+                <div class="homepage-event featured-event">
+
+                    <div class="event-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            16
+                        </strong>
+
+                    </div>
+
+                    <div class="event-details">
+
+                        <span class="event-type chess">
+                            CHESS CLUB
+                        </span>
+
+                        <h3>
+                            Chess Club Meeting
+                        </h3>
+
+                        <p>
+                            MS 407 · 2:30 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 3 -->
+
+                <div class="homepage-event">
+
+                    <div class="event-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            18
+                        </strong>
+
+                    </div>
+
+                    <div class="event-details">
+
+                        <span class="event-type crew">
+                            CREW
+                        </span>
+
+                        <h3>
+                            CREW #2
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 4 -->
+
+                <div class="homepage-event">
+
+                    <div class="event-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            25
+                        </strong>
+
+                    </div>
+
+                    <div class="event-details">
+
+                        <span class="event-type school">
+                            SCHOOL
+                        </span>
+
+                        <h3>
+                            No School
+                        </h3>
+
+                        <p>
+                            Teacher In Service Day
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 5 -->
+
+                <div class="homepage-event">
+
+                    <div class="event-date">
+
+                        <span>
+                            OCT
+                        </span>
+
+                        <strong>
+                            02
+                        </strong>
+
+                    </div>
+
+                    <div class="event-details">
+
+                        <span class="event-type fnf">
+                            FNF
+                        </span>
+
+                        <h3>
+                            FNF
+                        </h3>
+
+                        <p>
+                            Details TBD
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             EXPLORE THE CHESS CLUB
+        ========================================= -->
+
+        <section class="explore-section">
+
+            <div class="homepage-section-heading">
+
+                <div class="homepage-heading-icon">
+                    ♟
+                </div>
+
+                <div>
+
+                    <span class="homepage-section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Explore the Chess Club
+                    </h2>
+
+                    <p>
+                        Everything you need to know about the club.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="explore-grid">
+
+
+                <a
+                    class="explore-card"
+                    href="leaderboard.html"
+                >
+
+                    <div class="explore-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Leaderboard
+                        </h3>
+
+                        <p>
+                            Rankings and player statistics.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="explore-card"
+                    href="objectives.html"
+                >
+
+                    <div class="explore-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Objectives
+                        </h3>
+
+                        <p>
+                            Club goals and mission.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="explore-card"
+                    href="rules.html"
+                >
+
+                    <div class="explore-icon">
+                        📜
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Rules & Points
+                        </h3>
+
+                        <p>
+                            Club rules and how to earn points.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="explore-card"
+                    href="members.html"
+                >
+
+                    <div class="explore-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Members
+                        </h3>
+
+                        <p>
+                            Meet the people in Chess Club.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="explore-card"
+                    href="puzzle-winners.html"
+                >
+
+                    <div class="explore-icon">
+                        🧩
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Puzzle Winners
+                        </h3>
+
+                        <p>
+                            Current and past puzzle champions.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="explore-card classroom-card"
+                    href="https://classroom.google.com/c/ODc0NTU4MTgyODM5"
+                    target="_blank"
+                >
+
+                    <div class="explore-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Google Classroom
+                        </h3>
+
+                        <p>
+                            Access our club classroom.
+                        </p>
+
+                    </div>
+
+                    <span class="explore-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
 
     <footer class="site-footer">
 
         <div class="footer-content">
-    
-            <h3>Questions?</h3>
-    
+
+            <h3>
+                Questions?
+            </h3>
+
             <p>
-                If you have any questions about the Chess Club, feel free to contact us!
+                If you have any questions about the Chess Club,
+                feel free to contact us!
             </p>
-    
-    
+
+
             <div class="contact-list">
-                
+
+
                 <div class="contact-person">
-    
+
                     <span class="contact-name">
                         Malin
                     </span>
-                
+
                     <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=31malin_b@students.ics.ac.th"
                         target="_blank"
@@ -199,15 +612,16 @@
                     >
                         31malin_b@students.ics.ac.th
                     </a>
-                
+
                 </div>
-                
+
+
                 <div class="contact-person">
-                
+
                     <span class="contact-name">
                         Dylan J.
                     </span>
-                
+
                     <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=31dylan_j@students.ics.ac.th"
                         target="_blank"
@@ -215,15 +629,16 @@
                     >
                         31dylan_j@students.ics.ac.th
                     </a>
-                
+
                 </div>
-                
+
+
                 <div class="contact-person">
-                
+
                     <span class="contact-name">
                         Aliza
                     </span>
-                
+
                     <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=31aliza_l@students.ics.ac.th"
                         target="_blank"
@@ -231,16 +646,17 @@
                     >
                         31aliza_l@students.ics.ac.th
                     </a>
-                
+
                 </div>
-    
+
+
             </div>
-    
+
         </div>
-    
+
     </footer>
 
-    <script src="notifications.js"></script>
+
     <script src="leaderboard.js"></script>
 
 </body>
