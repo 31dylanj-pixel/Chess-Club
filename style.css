@@ -35,6 +35,7 @@ body {
     padding: 40px 0 60px;
 }
 
+
 /* =========================
    HEADER
 ========================= */
@@ -59,6 +60,7 @@ h1 {
 
     opacity: 0.85;
 }
+
 
 /* =========================
    URL BUTTON
@@ -99,116 +101,7 @@ h1 {
 
     box-shadow: 0 0 20px rgba(212,175,55,0.3);
 }
-/* =========================
-   TOP INFO CARDS
-========================= */
 
-.info-card {
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    border-radius: 20px;
-
-    backdrop-filter: blur(14px);
-
-    padding: 20px;
-
-    margin-bottom: 20px;
-
-    text-align: center;
-}
-
-.info-card h2 {
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 1.2rem;
-
-    color: #d4af37;
-
-    margin-bottom: 8px;
-}
-
-.info-card p {
-    opacity: 0.9;
-
-    transition: opacity 0.5s ease;
-}
-
-/* =========================
-   NAVIGATION GRID
-========================= */
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.grid > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-}
-
-.nav-card {
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    border-radius: 20px;
-
-    backdrop-filter: blur(14px);
-
-    padding: 24px;
-
-    text-decoration: none;
-
-    color: white;
-
-    min-height: 140px;
-
-    transition: all 0.25s ease;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-card:hover {
-    transform: translateY(-4px);
-
-    border-color: rgba(212,175,55,0.5);
-
-    box-shadow: 0 0 25px rgba(212,175,55,0.15);
-}
-
-.nav-card h2 {
-    font-family: "Montserrat", sans-serif;
-
-    color: #d4af37;
-
-    margin-bottom: 10px;
-}
-
-.nav-card p {
-    opacity: 0.8;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 2.3rem;
-    }
-
-}
 
 /* ========================================
    HOMEPAGE DASHBOARD
@@ -216,9 +109,14 @@ h1 {
 
 .homepage-dashboard {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
     gap: 25px;
-    margin-bottom: 30px;
+
+    margin-bottom: 35px;
 }
 
 
@@ -263,6 +161,7 @@ h1 {
 
 #top-three {
     display: flex;
+
     flex-direction: column;
 }
 
@@ -270,7 +169,10 @@ h1 {
 .top-player {
     display: grid;
 
-    grid-template-columns: 35px minmax(0, 1fr) auto;
+    grid-template-columns:
+        35px
+        minmax(0, 1fr)
+        auto;
 
     align-items: center;
 
@@ -413,11 +315,17 @@ h1 {
 
 .meeting-info {
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     justify-content: center;
+
     gap: 5px;
+
     min-width: 0;
+
     text-align: left;
 }
 
@@ -465,6 +373,524 @@ h1 {
 
 
 /* ========================================
+   PLAYER OF THE MONTH
+======================================== */
+
+.player-month {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.14),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    backdrop-filter: blur(16px);
+}
+
+
+.player-month-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 22px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    font-size: 2.3rem;
+}
+
+
+.player-month-content {
+    min-width: 0;
+}
+
+
+.player-month-label {
+    display: block;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.player-month-content h2 {
+    margin: 3px 0 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.8rem;
+}
+
+
+.player-month-date {
+    margin: 2px 0 15px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.8rem;
+}
+
+
+/* Player stats */
+
+.player-month-stats {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.player-month-stats > div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.player-month-stats strong {
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.1rem;
+}
+
+
+.player-month-stats span {
+    margin-top: 2px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.65rem;
+}
+
+
+.player-month-divider {
+    width: 1px;
+
+    height: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+.player-month-description {
+    margin: 15px 0 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.78rem;
+}
+
+
+/* ========================================
+   HOMEPAGE SECTION HEADINGS
+======================================== */
+
+.homepage-section-heading {
+    display: grid;
+
+    grid-template-columns:
+        46px
+        1fr;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.homepage-heading-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: rgba(212, 175, 55, 0.1);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    color: #d4af37;
+
+    font-size: 1.25rem;
+}
+
+
+.homepage-section-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.homepage-section-heading h2 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.2rem;
+}
+
+
+.homepage-section-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   UPCOMING EVENTS
+======================================== */
+
+.events-section {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+}
+
+
+.events-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+}
+
+
+.homepage-event {
+    display: grid;
+
+    grid-template-columns:
+        70px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 68px;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+
+.homepage-event.featured-event {
+    background: rgba(212, 175, 55, 0.07);
+
+    border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+
+/* Event date */
+
+.event-date {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 52px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+
+.featured-event .event-date {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+
+.event-date span {
+    color: rgba(255, 255, 255, 0.45);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.featured-event .event-date span {
+    color: #d4af37;
+}
+
+
+.event-date strong {
+    margin-top: 1px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1;
+}
+
+
+/* Event details */
+
+.event-details {
+    min-width: 0;
+}
+
+
+.event-type {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.event-type.chess {
+    color: #d4af37;
+}
+
+
+.event-type.school {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.event-type.crew {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.event-type.fnf {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.event-details h3 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.88rem;
+}
+
+
+.event-details p {
+    margin: 3px 0 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.68rem;
+}
+
+
+/* ========================================
+   EXPLORE THE CHESS CLUB
+======================================== */
+
+.explore-section {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+}
+
+
+.explore-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.explore-card {
+    display: grid;
+
+    grid-template-columns:
+        46px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 82px;
+
+    padding: 15px 17px;
+
+    box-sizing: border-box;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.explore-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(212, 175, 55, 0.45);
+
+    box-shadow:
+        0 0 22px rgba(212, 175, 55, 0.12);
+}
+
+
+.explore-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    font-size: 1.2rem;
+}
+
+
+.explore-card h3 {
+    margin: 0;
+
+    color: #d4af37;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.9rem;
+}
+
+
+.explore-card p {
+    margin: 3px 0 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.7rem;
+
+    line-height: 1.4;
+}
+
+
+.explore-arrow {
+    color: rgba(212, 175, 55, 0.7);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+}
+
+
+/* ========================================
    MOBILE
 ======================================== */
 
@@ -472,6 +898,85 @@ h1 {
 
     .homepage-dashboard {
         grid-template-columns: 1fr;
+    }
+
+
+    .player-month {
+        align-items: flex-start;
+
+        padding: 22px;
+
+        gap: 18px;
+    }
+
+
+    .player-month-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 17px;
+
+        font-size: 1.8rem;
+    }
+
+
+    .player-month-content h2 {
+        font-size: 1.45rem;
+    }
+
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .player-month {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .player-month-stats {
+        justify-content: center;
+    }
+
+
+    .player-month-description {
+        max-width: 350px;
+    }
+
+
+    .homepage-section-heading {
+        grid-template-columns:
+            42px
+            1fr;
+    }
+
+
+    .homepage-heading-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .homepage-event {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .event-date {
+        width: 52px;
     }
 
 }
