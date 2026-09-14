@@ -2,7 +2,7 @@ const players = [
     { 
         name: "Nuno (Rhattee) Charnprasertkij", 
         attendance: 3,
-        weeklyPuzzle: 3,
+        weeklyPuzzle: 4,
         monthlyPuzzle: 0,
         tournaments: 0
     },
@@ -51,7 +51,7 @@ const players = [
     { 
         name: "Aton (Aton) Liu", 
         attendance: 2,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         tournaments: 0
     },
@@ -72,14 +72,14 @@ const players = [
     { 
         name: "SolRay (Nanon) Nivataphand", 
         attendance: 3,
-        weeklyPuzzle: 4,
+        weeklyPuzzle: 6,
         monthlyPuzzle: 0,
         tournaments: 0
     },
     { 
         name: "Fenix Plunkett", 
         attendance: 3,
-        weeklyPuzzle: 5,
+        weeklyPuzzle: 7,
         monthlyPuzzle: 1,
         tournaments: 0
     },
@@ -100,7 +100,7 @@ const players = [
     { 
         name: "Grace (Nattha) Sakdibhornssup", 
         attendance: 2,
-        weeklyPuzzle: 3,
+        weeklyPuzzle: 4,
         monthlyPuzzle: 4,
         tournaments: 0
     },
@@ -114,7 +114,7 @@ const players = [
     { 
         name: "Pete (Pitchya) Suwankeeree", 
         attendance: 2,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 5,
         tournaments: 0
     },
@@ -135,7 +135,7 @@ const players = [
     { 
         name: "Vince (Vincent) Yodpijit", 
         attendance: 3,
-        weeklyPuzzle: 3,
+        weeklyPuzzle: 6,
         monthlyPuzzle: 3,
         tournaments: 0
     }
