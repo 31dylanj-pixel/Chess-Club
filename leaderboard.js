@@ -4,6 +4,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 4,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -11,6 +12,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0 
     },
     { 
@@ -18,6 +20,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -25,6 +28,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -32,6 +36,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -39,6 +44,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     {
@@ -46,6 +52,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 6,
+        puzzleComments: 1,
         tournaments: 0
     },
     { 
@@ -53,6 +60,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -60,6 +68,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -67,6 +76,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -74,6 +84,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 6,
         monthlyPuzzle: 0,
+        puzzleComments: 1,
         tournaments: 0
     },
     { 
@@ -81,6 +92,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 7,
         monthlyPuzzle: 1,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -88,6 +100,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -95,6 +108,7 @@ const players = [
         attendance: 1,
         weeklyPuzzle: 0,
         monthlyPuzzle: 2,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -102,6 +116,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 4,
         monthlyPuzzle: 4,
+        puzzleComments: 1,
         tournaments: 0
     },
     { 
@@ -109,6 +124,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 0,
         monthlyPuzzle: 1,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -116,6 +132,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 1,
         monthlyPuzzle: 5,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -123,6 +140,7 @@ const players = [
         attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -130,6 +148,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
+        puzzleComments: 0,
         tournaments: 0
     },
     { 
@@ -137,6 +156,7 @@ const players = [
         attendance: 3,
         weeklyPuzzle: 6,
         monthlyPuzzle: 3,
+        puzzleComments: 0,
         tournaments: 0
     }
 ];
@@ -153,6 +173,7 @@ players.forEach(player => {
             player.attendance +
             player.weeklyPuzzle +
             player.monthlyPuzzle +
+            player.puzzleComments +
             player.tournaments;
     }
 
@@ -302,19 +323,12 @@ if (rankingsTable) {
    the actual breakdown for each player.
 */
 
-const defaultBreakdown = {
-    attendance: 0,
-    weeklyPuzzle: 0,
-    monthlyPuzzle: 0,
-    tournaments: 0
-};
-
-
 function createBreakdown(player) {
 
     const attendance = player.attendance ?? 0;
     const weeklyPuzzle = player.weeklyPuzzle ?? 0;
     const monthlyPuzzle = player.monthlyPuzzle ?? 0;
+    const puzzleComments = player.puzzleComments ?? 0;
     const tournaments = player.tournaments ?? 0;
 
     return `
@@ -331,6 +345,11 @@ function createBreakdown(player) {
         <div class="breakdown-item">
             <span>Monthly Puzzle</span>
             <strong>+${monthlyPuzzle}</strong>
+        </div>
+
+        <div class="breakdown-item">
+            <span>Puzzle Comments</span>
+            <strong>+${puzzleComments}</strong>
         </div>
 
         <div class="breakdown-item">
