@@ -2,13 +2,18 @@
    SIDEBAR NAVIGATION
 ======================================== */
 
-const sidebar = document.getElementById("sidebar");
-const sidebarToggle = document.getElementById("sidebarToggle");
-const sidebarOverlay = document.getElementById("sidebarOverlay");
+const sidebar =
+    document.getElementById("sidebar");
+
+const sidebarToggle =
+    document.getElementById("sidebarToggle");
+
+const sidebarOverlay =
+    document.getElementById("sidebarOverlay");
 
 
 /* ========================================
-   OPEN / CLOSE SIDEBAR
+   OPEN MOBILE SIDEBAR
 ======================================== */
 
 function openSidebar() {
@@ -20,6 +25,10 @@ function openSidebar() {
 }
 
 
+/* ========================================
+   CLOSE MOBILE SIDEBAR
+======================================== */
+
 function closeSidebar() {
 
     sidebar.classList.remove("open");
@@ -30,29 +39,46 @@ function closeSidebar() {
 
 
 /* ========================================
-   TOGGLE BUTTON
+   TOGGLE SIDEBAR
 ======================================== */
 
 if (sidebarToggle) {
 
-    sidebarToggle.addEventListener("click", () => {
+    sidebarToggle.addEventListener(
+        "click",
+        () => {
 
-        const isOpen =
-            sidebar.classList.contains("open");
+            if (window.innerWidth <= 900) {
 
-        if (isOpen) {
-            closeSidebar();
-        } else {
-            openSidebar();
+                const isOpen =
+                    sidebar.classList.contains("open");
+
+                if (isOpen) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+
+                return;
+            }
+
+
+            /* DESKTOP */
+
+            sidebar.classList.toggle("collapsed");
+
+            document.body.classList.toggle(
+                "sidebar-collapsed"
+            );
+
         }
-
-    });
+    );
 
 }
 
 
 /* ========================================
-   CLICK OUTSIDE
+   CLICK OUTSIDE ON MOBILE
 ======================================== */
 
 if (sidebarOverlay) {
@@ -66,12 +92,13 @@ if (sidebarOverlay) {
 
 
 /* ========================================
-   CURRENT PAGE
+   ACTIVE PAGE
 ======================================== */
 
 const currentPage =
-    window.location.pathname.split("/").pop() ||
-    "index.html";
+    window.location.pathname
+        .split("/")
+        .pop() || "index.html";
 
 
 document
@@ -81,9 +108,7 @@ document
         const linkPage =
             link.getAttribute("href");
 
-        if (
-            linkPage === currentPage
-        ) {
+        if (linkPage === currentPage) {
 
             link.classList.add("active");
 
