@@ -393,27 +393,27 @@ body.sidebar-collapsed {
     position: fixed;
 
     top: 30px;
-    left: 270px;
+    left: 264px;
 
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 11px;
+    border-radius: 9px;
 
     border:
-        1px solid rgba(212, 175, 55, 0.25);
+        1px solid rgba(255, 255, 255, 0.1);
 
     background:
         rgba(8, 20, 35, 0.95);
 
     color: #d4af37;
 
-    font-size: 1rem;
+    font-size: 0.85rem;
 
     cursor: pointer;
 
@@ -423,18 +423,24 @@ body.sidebar-collapsed {
 
     transition:
         left 0.25s ease,
-        transform 0.2s ease;
+        background 0.2s ease;
 }
 
 .sidebar-toggle:hover {
     background:
         rgba(212, 175, 55, 0.12);
+
+    border-color:
+        rgba(212, 175, 55, 0.25);
 }
+
+/* ========================================
+   COLLAPSED TOGGLE
+======================================== */
 
 body.sidebar-collapsed .sidebar-toggle {
-    left: 88px;
+    left: 82px;
 }
-
 
 /* ========================================
    MOBILE OVERLAY
