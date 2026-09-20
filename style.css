@@ -11,7 +11,7 @@
 body {
     min-height: 100vh;
 
-    padding-left: 275px;
+    padding-left: 300px;
 
     font-family: "Poppins", sans-serif;
 
@@ -38,7 +38,7 @@ body {
     left: 20px;
     bottom: 20px;
 
-    width: 235px;
+    width: 260px;
 
     padding: 22px 16px;
 
@@ -65,6 +65,9 @@ body {
         0 20px 50px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
+
+    transition:
+        width 0.25s ease;
 }
 
 
@@ -80,8 +83,11 @@ body {
     gap: 12px;
 
     padding: 5px 7px 22px;
-}
 
+    white-space: nowrap;
+
+    overflow: hidden;
+}
 
 .sidebar-logo {
     display: flex;
@@ -109,7 +115,6 @@ body {
     font-size: 1.4rem;
 }
 
-
 .sidebar-brand h2 {
     margin: 0;
 
@@ -121,7 +126,6 @@ body {
 
     font-weight: 800;
 }
-
 
 .sidebar-brand span {
     display: block;
@@ -149,7 +153,6 @@ body {
     gap: 5px;
 }
 
-
 .sidebar-link {
     position: relative;
 
@@ -176,14 +179,17 @@ body {
 
     font-weight: 500;
 
+    white-space: nowrap;
+
+    overflow: hidden;
+
     transition:
         background 0.2s ease,
         color 0.2s ease,
         border-color 0.2s ease;
-
+        
     border: 1px solid transparent;
 }
-
 
 .sidebar-icon {
     display: flex;
@@ -197,7 +203,6 @@ body {
 
     font-size: 1rem;
 }
-
 
 .sidebar-link:hover {
     color: white;
@@ -223,7 +228,6 @@ body {
     border-color:
         rgba(212, 175, 55, 0.2);
 }
-
 
 .sidebar-link.active::before {
     content: "";
@@ -268,8 +272,9 @@ body {
     margin-top: auto;
 
     padding: 0 7px;
-}
 
+    overflow: hidden;
+}
 
 .sidebar-divider {
     width: 100%;
@@ -281,7 +286,6 @@ body {
     background:
         rgba(255, 255, 255, 0.08);
 }
-
 
 .sidebar-bottom p {
     margin: 0;
@@ -298,43 +302,137 @@ body {
     line-height: 1.6;
 
     letter-spacing: 0.5px;
+
+    white-space: nowrap;
 }
 
+
 /* ========================================
-   MOBILE TOGGLE
+   MAIN CONTENT OFFSET
+======================================== */
+
+body {
+    padding-left: 300px;
+
+    transition:
+        padding-left 0.25s ease;
+}
+
+
+/* ========================================
+   COLLAPSED SIDEBAR
+======================================== */
+
+.sidebar.collapsed {
+    width: 78px;
+}
+
+body.sidebar-collapsed {
+    padding-left: 118px;
+}
+
+
+/* ========================================
+   COLLAPSED BRAND
+======================================== */
+
+.sidebar.collapsed .sidebar-brand {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar.collapsed .sidebar-brand > div:last-child {
+    display: none;
+}
+
+
+/* ========================================
+   COLLAPSED NAV LINKS
+======================================== */
+
+.sidebar.collapsed .sidebar-link {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    gap: 0;
+}
+
+.sidebar.collapsed .sidebar-link > span:not(.sidebar-icon) {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-icon {
+    width: auto;
+}
+
+
+/* ========================================
+   COLLAPSED BOTTOM
+======================================== */
+
+.sidebar.collapsed .sidebar-bottom {
+    padding: 0;
+
+    text-align: center;
+}
+
+.sidebar.collapsed .sidebar-bottom p {
+    display: none;
+}
+
+
+/* ========================================
+   SIDEBAR TOGGLE
 ======================================== */
 
 .sidebar-toggle {
-    display: none;
-
     position: fixed;
 
-    top: 16px;
-    left: 16px;
+    top: 30px;
+    left: 270px;
 
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
+
+    display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 13px;
+    border-radius: 11px;
 
     border:
         1px solid rgba(212, 175, 55, 0.25);
 
     background:
-        rgba(8, 20, 35, 0.9);
+        rgba(8, 20, 35, 0.95);
 
     color: #d4af37;
 
-    font-size: 1.25rem;
+    font-size: 1rem;
 
     cursor: pointer;
 
     backdrop-filter: blur(14px);
 
     z-index: 1100;
+
+    transition:
+        left 0.25s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    background:
+        rgba(212, 175, 55, 0.12);
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+    left: 88px;
 }
 
 
@@ -364,10 +462,10 @@ body {
 
 @media (max-width: 900px) {
 
-    body {
+    body,
+    body.sidebar-collapsed {
         padding-left: 0;
     }
-
 
     .sidebar {
         top: 12px;
@@ -382,16 +480,24 @@ body {
             transform 0.25s ease;
     }
 
-
     .sidebar.open {
         transform: translateX(0);
     }
 
+    .sidebar.collapsed {
+        width: 245px;
+    }
 
     .sidebar-toggle {
         display: flex;
+
+        top: 16px;
+        left: 16px;
     }
 
+    body.sidebar-collapsed .sidebar-toggle {
+        left: 16px;
+    }
 
     .sidebar-overlay {
         display: block;
@@ -404,7 +510,6 @@ body {
             opacity 0.25s ease,
             visibility 0.25s ease;
     }
-
 
     .sidebar-overlay.open {
         opacity: 1;
