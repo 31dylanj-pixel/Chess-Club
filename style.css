@@ -11,6 +11,8 @@
 body {
     min-height: 100vh;
 
+    padding-left: 275px;
+
     font-family: "Poppins", sans-serif;
 
     background: linear-gradient(
@@ -297,16 +299,6 @@ body {
 
     letter-spacing: 0.5px;
 }
-
-
-/* ========================================
-   MAIN CONTENT OFFSET
-======================================== */
-
-body {
-    padding-left: 275px;
-}
-
 
 /* ========================================
    MOBILE TOGGLE
