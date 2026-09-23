@@ -2,7 +2,7 @@ const players = [
     { 
         name: "Nuno (Rhattee) Charnprasertkij", 
         attendance: 3,
-        weeklyPuzzle: 4,
+        weeklyPuzzle: 5,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
@@ -90,7 +90,7 @@ const players = [
     { 
         name: "Fenix Plunkett", 
         attendance: 3,
-        weeklyPuzzle: 7,
+        weeklyPuzzle: 10,
         monthlyPuzzle: 1,
         puzzleComments: 0,
         tournaments: 0
@@ -106,7 +106,7 @@ const players = [
     { 
         name: "Leo (Arlyn) Roteseree", 
         attendance: 1,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 2,
         puzzleComments: 0,
         tournaments: 0
@@ -130,7 +130,7 @@ const players = [
     { 
         name: "Pete (Pitchya) Suwankeeree", 
         attendance: 2,
-        weeklyPuzzle: 1,
+        weeklyPuzzle: 3,
         monthlyPuzzle: 5,
         puzzleComments: 0,
         tournaments: 0
@@ -154,7 +154,7 @@ const players = [
     { 
         name: "Vince (Vincent) Yodpijit", 
         attendance: 3,
-        weeklyPuzzle: 6,
+        weeklyPuzzle: 8,
         monthlyPuzzle: 3,
         puzzleComments: 0,
         tournaments: 0
