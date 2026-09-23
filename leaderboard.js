@@ -9,7 +9,7 @@ const players = [
     },
     { 
         name: "Jaden Cockayne", 
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -25,7 +25,7 @@ const players = [
     },
     { 
         name: "Isaac Fickett",
-        attendance: 3,
+        attendance: 4,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -33,7 +33,7 @@ const players = [
     },
     { 
         name: "Levy (Natthadetch) Hengpongthorn",
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -41,7 +41,7 @@ const players = [
     },
     { 
         name: "Tonnam (Putthima) Lertwirojkul",
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -49,7 +49,7 @@ const players = [
     },
     {
         name: "Nate (Nacin) Limthongkul",
-        attendance: 3,
+        attendance: 4,
         weeklyPuzzle: 1,
         monthlyPuzzle: 6,
         puzzleComments: 1,
@@ -57,7 +57,7 @@ const players = [
     },
     { 
         name: "Aton (Aton) Liu", 
-        attendance: 2,
+        attendance: 4,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -65,7 +65,7 @@ const players = [
     },
     { 
         name: "Anna (Anna) Lo",
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -81,7 +81,7 @@ const players = [
     },
     { 
         name: "SolRay (Nanon) Nivataphand", 
-        attendance: 3,
+        attendance: 5,
         weeklyPuzzle: 6,
         monthlyPuzzle: 0,
         puzzleComments: 1,
@@ -89,7 +89,7 @@ const players = [
     },
     { 
         name: "Fenix Plunkett", 
-        attendance: 3,
+        attendance: 5,
         weeklyPuzzle: 10,
         monthlyPuzzle: 1,
         puzzleComments: 0,
@@ -97,7 +97,7 @@ const players = [
     },
     { 
         name: "Ivan (Ivan David) Pulikkan", 
-        attendance: 3,
+        attendance: 4,
         weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -105,7 +105,7 @@ const players = [
     },
     { 
         name: "Leo (Arlyn) Roteseree", 
-        attendance: 1,
+        attendance: 2,
         weeklyPuzzle: 1,
         monthlyPuzzle: 2,
         puzzleComments: 0,
@@ -121,7 +121,7 @@ const players = [
     },
     { 
         name: "Bohden Sheridan",
-        attendance: 3,
+        attendance: 4,
         weeklyPuzzle: 0,
         monthlyPuzzle: 1,
         puzzleComments: 0,
@@ -129,7 +129,7 @@ const players = [
     },
     { 
         name: "Pete (Pitchya) Suwankeeree", 
-        attendance: 2,
+        attendance: 4,
         weeklyPuzzle: 3,
         monthlyPuzzle: 5,
         puzzleComments: 0,
@@ -137,7 +137,7 @@ const players = [
     },
     { 
         name: "Penguin (Teetat) Tanakornkul",
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
         puzzleComments: 0,
@@ -153,7 +153,7 @@ const players = [
     },
     { 
         name: "Vince (Vincent) Yodpijit", 
-        attendance: 3,
+        attendance: 5,
         weeklyPuzzle: 8,
         monthlyPuzzle: 3,
         puzzleComments: 0,
