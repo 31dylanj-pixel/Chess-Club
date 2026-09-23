@@ -105,7 +105,7 @@ const players = [
     },
     { 
         name: "Leo (Arlyn) Roteseree", 
-        attendance: 2,
+        attendance: 3,
         weeklyPuzzle: 1,
         monthlyPuzzle: 2,
         puzzleComments: 0,
