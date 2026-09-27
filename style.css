@@ -1218,110 +1218,229 @@ h1 {
 ======================================== */
 
 .player-month {
-    display: flex;
+    position: relative;
 
+    display: flex;
     align-items: center;
-    justify-content: center;
 
     width: 100%;
 
     margin: 0 0 35px;
-
-    padding: 30px;
+    padding: 30px 34px;
 
     box-sizing: border-box;
 
-    border-radius: 22px;
+    overflow: hidden;
+
+    border-radius: var(--radius-xl);
 
     background:
         linear-gradient(
             135deg,
-            rgba(212, 175, 55, 0.14),
-            rgba(255, 255, 255, 0.06)
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.045) 55%,
+            rgba(255, 255, 255, 0.025)
         );
 
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.24);
 
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    text-align: center;
+    box-shadow:
+        var(--shadow-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
 
-/* Trophy stays on the left */
+/* Subtle gold glow */
+
+.player-month::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    left: -80px;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    filter: blur(45px);
+
+    pointer-events: none;
+}
+
+
+/* Top highlight */
+
+.player-month::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(212, 175, 55, 0.5),
+            transparent
+        );
+
+    opacity: 0.65;
+}
+
+
+/* Hover */
+
+.player-month:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(212, 175, 55, 0.38);
+
+    box-shadow:
+        var(--shadow-hover),
+        0 0 35px rgba(212, 175, 55, 0.05);
+}
+
+
+/* ========================================
+   TROPHY
+======================================== */
 
 .player-month-icon {
-    display: flex;
+    position: relative;
+    z-index: 1;
 
+    display: flex;
     align-items: center;
     justify-content: center;
 
     flex-shrink: 0;
 
-    width: 82px;
-    height: 82px;
+    width: 88px;
+    height: 88px;
 
-    margin-right: 25px;
+    margin-right: 28px;
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    background: rgba(212, 175, 55, 0.1);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212, 175, 55, 0.16),
+            rgba(212, 175, 55, 0.055)
+        );
 
     border: 1px solid rgba(212, 175, 55, 0.3);
 
-    font-size: 2.3rem;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+    font-size: 2.4rem;
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
 
-/* Content stays centered */
+.player-month:hover .player-month-icon {
+    transform: scale(1.04);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
 
 .player-month-content {
+    position: relative;
+    z-index: 1;
+
     min-width: 0;
 
-    text-align: center;
+    flex: 1;
+
+    text-align: left;
 }
 
 
 .player-month-label {
     display: block;
 
-    color: #d4af37;
+    margin-bottom: 4px;
+
+    color: var(--gold);
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 0.65rem;
+    font-size: 0.62rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 2.2px;
 }
 
 
 .player-month-content h2 {
-    margin: 3px 0 0;
+    margin: 0;
+
+    color: var(--text-main);
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+
+    font-weight: 800;
+
+    line-height: 1.15;
 }
 
 
 .player-month-date {
-    margin: 2px 0 15px;
+    margin: 5px 0 17px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
 
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+
+    font-weight: 500;
 }
 
+
+/* ========================================
+   STATS
+======================================== */
 
 .player-month-stats {
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    gap: 20px;
+    gap: 22px;
 }
 
 
@@ -1330,43 +1449,112 @@ h1 {
 
     flex-direction: column;
 
-    align-items: center;
+    align-items: flex-start;
 }
 
 
 .player-month-stats strong {
-    color: #d4af37;
+    color: var(--gold);
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    line-height: 1.2;
 }
 
 
 .player-month-stats span {
-    margin-top: 2px;
+    margin-top: 3px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
 
-    font-size: 0.65rem;
+    font-size: 0.62rem;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
 }
 
 
 .player-month-divider {
     width: 1px;
 
-    height: 30px;
+    height: 31px;
 
-    background: rgba(255, 255, 255, 0.12);
+    background:
+        rgba(255, 255, 255, 0.1);
 }
 
 
+/* ========================================
+   DESCRIPTION
+======================================== */
+
 .player-month-description {
-    margin: 15px 0 0;
+    max-width: 620px;
 
-    color: rgba(255, 255, 255, 0.65);
+    margin: 14px 0 0;
 
-    font-size: 0.78rem;
+    color: var(--text-secondary);
+
+    font-size: 0.75rem;
+
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .player-month {
+        flex-direction: column;
+
+        padding: 26px 20px;
+
+        text-align: center;
+    }
+
+    .player-month-icon {
+        width: 74px;
+        height: 74px;
+
+        margin-right: 0;
+        margin-bottom: 18px;
+
+        font-size: 2rem;
+    }
+
+    .player-month-content {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .player-month-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .player-month-stats {
+        justify-content: center;
+    }
+
+    .player-month-stats > div {
+        align-items: center;
+    }
+
+    .player-month-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 /* ========================================
