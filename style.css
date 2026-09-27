@@ -882,53 +882,77 @@ h1 {
 
 
 /* ========================================
-   HOMEPAGE TOP 3
+   HOMEPAGE TOP 3 — CARD SEPARATION
 ======================================== */
 
-#top-three {
-    margin-top: 5px;
-}
-
 #top-three .podium {
-    margin-bottom: 0;
-
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
+    margin-bottom: 0;
 }
 
 #top-three .podium-card {
     padding: 18px 10px;
 
     border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
 }
 
-#top-three .podium-card h2 {
-    font-size: 0.9rem;
+#top-three .podium-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(255, 255, 255, 0.2);
+
+    background:
+        rgba(255, 255, 255, 0.075);
 }
 
-#top-three .podium-rank {
-    font-size: 1.4rem;
+
+/* #1 */
+
+#top-three .first-place {
+    border-color:
+        rgba(212, 175, 55, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212, 175, 55, 0.13),
+            rgba(255, 255, 255, 0.045)
+        );
 }
 
-#top-three .podium-points {
-    font-size: 0.9rem;
+
+/* #2 */
+
+#top-three .second-place {
+    border-color:
+        rgba(192, 192, 192, 0.2);
 }
 
-.dashboard-link {
-    display: inline-block;
 
-    margin-top: 15px;
+/* #3 */
 
-    color: #d4af37;
-
-    font-size: 0.85rem;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: color 0.2s ease;
+#top-three .third-place {
+    border-color:
+        rgba(205, 127, 50, 0.2);
 }
-
 
 .dashboard-link:hover {
     color: #f5d76e;
