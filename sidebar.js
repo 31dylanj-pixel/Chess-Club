@@ -43,39 +43,54 @@ function closeSidebar() {
 ======================================== */
 
 if (sidebarToggle) {
+    sidebarToggle.addEventListener("click", () => {
 
-    sidebarToggle.addEventListener(
-        "click",
-        () => {
+        if (window.innerWidth <= 900) {
+            const isOpen = sidebar.classList.contains("open");
 
-            if (window.innerWidth <= 900) {
-
-                const isOpen =
-                    sidebar.classList.contains("open");
-
-                if (isOpen) {
-                    closeSidebar();
-                } else {
-                    openSidebar();
-                }
-
-                return;
+            if (isOpen) {
+                closeSidebar();
+                sidebarToggle.innerHTML = "☰";
+                sidebarToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
+            } else {
+                openSidebar();
+                sidebarToggle.innerHTML = "×";
+                sidebarToggle.setAttribute(
+                    "aria-label",
+                    "Close navigation"
+                );
             }
 
+            return;
+        }
 
-            /* DESKTOP */
-
+        const isCollapsed =
             sidebar.classList.toggle("collapsed");
 
-            document.body.classList.toggle(
-                "sidebar-collapsed"
-            );
+        document.body.classList.toggle(
+            "sidebar-collapsed",
+            isCollapsed
+        );
 
-        }
-    );
+        sidebarToggle.innerHTML =
+            isCollapsed ? "›" : "‹";
 
+        sidebarToggle.setAttribute(
+            "aria-label",
+            isCollapsed
+                ? "Expand navigation"
+                : "Collapse navigation"
+        );
+
+        sidebarToggle.setAttribute(
+            "aria-expanded",
+            String(!isCollapsed)
+        );
+    });
 }
-
 
 /* ========================================
    CLICK OUTSIDE ON MOBILE
