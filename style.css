@@ -1639,9 +1639,13 @@ h1 {
 .events-section {
     width: 100%;
 
-    margin: 0 auto 35px;
+    margin: 0 0 35px;
 }
 
+
+/* ========================================
+   EVENTS CONTAINER
+======================================== */
 
 .events-list {
     display: flex;
@@ -1650,51 +1654,118 @@ h1 {
 
     gap: 8px;
 
-    padding: 20px;
+    width: 100%;
+
+    padding: 14px;
 
     box-sizing: border-box;
 
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
 
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--border);
 
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: var(--shadow-card);
 }
 
 
+/* ========================================
+   EVENT CARD
+======================================== */
+
 .homepage-event {
+    position: relative;
+
     display: grid;
 
     grid-template-columns:
-        70px
+        72px
         minmax(0, 1fr);
 
     align-items: center;
 
     gap: 18px;
 
-    min-height: 68px;
+    min-height: 70px;
 
-    padding: 10px 12px;
+    padding: 11px 14px;
 
     box-sizing: border-box;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.032);
+
+    border: 1px solid transparent;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
+
+.homepage-event:hover {
+    transform: translateX(3px);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border-color:
+        rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ========================================
+   FEATURED EVENT
+======================================== */
 
 .homepage-event.featured-event {
-    background: rgba(212, 175, 55, 0.07);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212, 175, 55, 0.09),
+            rgba(212, 175, 55, 0.035)
+        );
 
-    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+    box-shadow:
+        inset 3px 0 0 rgba(212, 175, 55, 0.65);
 }
 
 
-/* Event date */
+.homepage-event.featured-event:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212, 175, 55, 0.12),
+            rgba(212, 175, 55, 0.045)
+        );
+
+    border-color:
+        rgba(212, 175, 55, 0.28);
+}
+
+
+/* ========================================
+   EVENT DATE
+======================================== */
 
 .event-date {
     display: flex;
@@ -1704,50 +1775,73 @@ h1 {
     align-items: center;
     justify-content: center;
 
-    width: 60px;
-    height: 52px;
+    width: 62px;
+    height: 54px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.065);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
 
 
 .featured-event .event-date {
-    background: rgba(212, 175, 55, 0.1);
+    background:
+        rgba(212, 175, 55, 0.11);
+
+    border-color:
+        rgba(212, 175, 55, 0.2);
 }
 
+
+/* Month */
 
 .event-date span {
-    color: rgba(255, 255, 255, 0.45);
+    color:
+        rgba(255, 255, 255, 0.42);
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 0.55rem;
+    font-size: 0.52rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 1.5px;
-}
-
-
-.featured-event .event-date span {
-    color: #d4af37;
-}
-
-
-.event-date strong {
-    margin-top: 1px;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 1.25rem;
 
     line-height: 1;
 }
 
 
-/* Event details */
+.featured-event .event-date span {
+    color: var(--gold);
+}
+
+
+/* Day */
+
+.event-date strong {
+    margin-top: 4px;
+
+    color: var(--text-main);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
 
 .event-details {
     min-width: 0;
@@ -1757,55 +1851,119 @@ h1 {
 .event-type {
     display: block;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 0.55rem;
+    font-size: 0.53rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.25px;
+
+    line-height: 1;
 }
 
 
+/* Event categories */
+
 .event-type.chess {
-    color: #d4af37;
+    color: var(--gold);
 }
 
 
 .event-type.school {
-    color: rgba(255, 255, 255, 0.45);
+    color:
+        rgba(255, 255, 255, 0.43);
 }
 
 
 .event-type.crew {
-    color: rgba(255, 255, 255, 0.55);
+    color:
+        rgba(255, 255, 255, 0.52);
 }
 
 
 .event-type.fnf {
-    color: rgba(255, 255, 255, 0.55);
+    color:
+        rgba(255, 255, 255, 0.52);
 }
 
+
+/* Event title */
 
 .event-details h3 {
     margin: 0;
 
+    color: var(--text-main);
+
     font-family: "Montserrat", sans-serif;
 
-    font-size: 0.88rem;
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    line-height: 1.3;
 }
 
+
+/* Location / details */
 
 .event-details p {
-    margin: 3px 0 0;
+    margin: 4px 0 0;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
 
-    font-size: 0.68rem;
+    font-size: 0.66rem;
+
+    line-height: 1.35;
 }
 
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .events-list {
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+    .homepage-event {
+        grid-template-columns:
+            60px
+            minmax(0, 1fr);
+
+        gap: 13px;
+
+        min-height: 64px;
+
+        padding: 9px 10px;
+
+        border-radius: 12px;
+    }
+
+    .event-date {
+        width: 54px;
+        height: 50px;
+    }
+
+    .event-date strong {
+        font-size: 1.1rem;
+    }
+
+    .event-details h3 {
+        font-size: 0.78rem;
+    }
+
+    .event-details p {
+        font-size: 0.62rem;
+    }
+
+}
 
 /* ========================================
    EXPLORE THE CHESS CLUB
