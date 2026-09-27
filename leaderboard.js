@@ -186,27 +186,28 @@ const rankedPlayers = [...players].sort((a, b) => b.points - a.points);
 
 
 /* ========================================
-   CALCULATE COMPETITION RANKS
+   CALCULATE DENSE RANKS
+
    Example:
    10, 10, 8, 7, 7, 5
+
    becomes:
-   1, 1, 3, 4, 4, 6
+   1, 1, 2, 3, 3, 4
 ======================================== */
 
-let previousPoints = null;
 let currentRank = 0;
+let previousPoints = null;
 
-rankedPlayers.forEach((player, index) => {
+rankedPlayers.forEach(player => {
 
     if (player.points !== previousPoints) {
-        currentRank = index + 1;
+        currentRank++;
     }
 
     player.rank = currentRank;
 
     previousPoints = player.points;
 });
-
 
 /* ========================================
    PODIUM
