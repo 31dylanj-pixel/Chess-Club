@@ -282,6 +282,26 @@ main {
    SIDEBAR NAV
 ======================================== */
 
+.sidebar-category {
+    margin: 18px 7px 7px;
+
+    color: rgba(255, 255, 255, 0.28);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    line-height: 1;
+}
+
+.sidebar-category:first-child {
+    margin-top: 2px;
+}
+
 .sidebar-nav {
     display: flex;
 
@@ -479,6 +499,9 @@ body.sidebar-collapsed {
     padding-left: 118px;
 }
 
+.sidebar.collapsed .sidebar-category {
+    display: none;
+}
 
 /* ========================================
    COLLAPSED BRAND
@@ -547,31 +570,42 @@ body.sidebar-collapsed {
     height: 32px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
+    padding: 0;
+
     border-radius: 9px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     background:
         rgba(8, 20, 35, 0.95);
 
     color: #d4af37;
 
-    font-size: 0.85rem;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    line-height: 1;
 
     cursor: pointer;
 
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
 
     z-index: 1100;
 
     transition:
         left 0.25s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .sidebar-toggle:hover {
@@ -580,6 +614,12 @@ body.sidebar-collapsed {
 
     border-color:
         rgba(212, 175, 55, 0.25);
+
+    transform: scale(1.05);
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+    left: 82px;
 }
 
 /* ========================================
