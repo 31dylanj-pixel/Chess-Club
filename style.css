@@ -882,76 +882,199 @@ h1 {
 
 
 /* ========================================
-   HOMEPAGE TOP 3 — CARD SEPARATION
+   HOMEPAGE TOP 3
 ======================================== */
 
-#top-three .podium {
+#top-three {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-bottom: 0;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
 }
 
-#top-three .podium-card {
-    padding: 18px 10px;
+
+/* ========================================
+   TOP PLAYER CARD
+======================================== */
+
+#top-three .top-player {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    min-height: 125px;
+
+    padding: 16px 8px;
 
     border-radius: 16px;
 
     background:
-        rgba(255, 255, 255, 0.055);
+        rgba(255, 255, 255, 0.045);
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    backdrop-filter: blur(12px);
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12);
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
     transition:
         transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
-#top-three .podium-card:hover {
+#top-three .top-player:hover {
     transform: translateY(-3px);
 
-    border-color:
-        rgba(255, 255, 255, 0.2);
-
     background:
-        rgba(255, 255, 255, 0.075);
+        rgba(255, 255, 255, 0.065);
+
+    border-color:
+        rgba(255, 255, 255, 0.17);
 }
 
 
-/* #1 */
+/* ========================================
+   MEDAL
+======================================== */
 
-#top-three .first-place {
-    border-color:
-        rgba(212, 175, 55, 0.35);
+#top-three .top-rank {
+    display: block;
 
+    margin-bottom: 8px;
+
+    font-size: 1.35rem;
+
+    line-height: 1;
+}
+
+
+/* ========================================
+   PLAYER NAME
+======================================== */
+
+#top-three .top-name {
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-main);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    text-align: center;
+
+    text-overflow: ellipsis;
+
+    word-break: break-word;
+}
+
+
+/* ========================================
+   POINTS
+======================================== */
+
+#top-three .top-player strong {
+    display: block;
+
+    margin-top: 9px;
+
+    color: var(--gold);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+}
+
+
+/* ========================================
+   FIRST PLACE
+======================================== */
+
+#top-three .top-player:nth-child(1) {
     background:
         linear-gradient(
             145deg,
             rgba(212, 175, 55, 0.13),
-            rgba(255, 255, 255, 0.045)
+            rgba(255, 255, 255, 0.035)
         );
+
+    border-color:
+        rgba(212, 175, 55, 0.28);
 }
 
 
-/* #2 */
+/* ========================================
+   SECOND PLACE
+======================================== */
 
-#top-three .second-place {
+#top-three .top-player:nth-child(2) {
     border-color:
-        rgba(192, 192, 192, 0.2);
+        rgba(192, 192, 192, 0.16);
 }
 
 
-/* #3 */
+/* ========================================
+   THIRD PLACE
+======================================== */
 
-#top-three .third-place {
+#top-three .top-player:nth-child(3) {
     border-color:
-        rgba(205, 127, 50, 0.2);
+        rgba(205, 127, 50, 0.16);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    #top-three {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    #top-three .top-player {
+        min-height: 110px;
+
+        padding: 13px 5px;
+    }
+
+    #top-three .top-rank {
+        font-size: 1.15rem;
+    }
+
+    #top-three .top-name {
+        font-size: 0.62rem;
+    }
+
+    #top-three .top-player strong {
+        font-size: 0.85rem;
+    }
+
 }
 
 .dashboard-link:hover {
