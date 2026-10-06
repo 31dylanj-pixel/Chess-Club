@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chess Lessons</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Lesson CSS -->
+
+    <link
+        rel="stylesheet"
+        href="lessons.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<main class="lesson-page">
+
+
+    <header class="lesson-header">
+
+        <h1>
+            Chess Board Test
+        </h1>
+
+        <p>
+            Testing the universal chess movement engine.
+        </p>
+
+    </header>
+
+
+    <section class="board-panel">
+
+        <div id="chessboard"></div>
+
+    </section>
+
+
+    <div class="board-controls">
+
+        <button
+            class="board-button"
+            id="resetBoard"
+            type="button"
+        >
+            Reset Board
+        </button>
+
+    </div>
+
+
+    <p
+        class="move-status"
+        id="moveStatus"
+    >
+        Select a piece to see its legal moves.
+    </p>
+
+
+</main>
+
+
+<script src="chess-movement.js"></script>
+<script src="chessboard.js"></script>
+
+
+<script>
+
+const boardElement =
+    document.getElementById(
+        "chessboard"
+    );
+
+
+const chessboard =
+    new ChessBoard(
+        boardElement
+    );
+
+
+const resetButton =
+    document.getElementById(
+        "resetBoard"
+    );
+
+
+const moveStatus =
+    document.getElementById(
+        "moveStatus"
+    );
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+resetButton.addEventListener(
+    "click",
+    () => {
+
+        chessboard.reset();
+
+        moveStatus.textContent =
+            "Select a piece to see its legal moves.";
+
+    }
+);
+
+
+/* =========================================================
+   MOVE CALLBACK
+========================================================= */
+
+chessboard.onMove =
+    (move) => {
+
+        moveStatus.textContent =
+            `${move.piece.color} ${move.piece.type} moved.`;
+
+    };
+    
+</script>
+
+
+</body>
+
+</html>
