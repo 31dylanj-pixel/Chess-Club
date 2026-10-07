@@ -89,7 +89,7 @@ const players = [
     },
     { 
         name: "Fenix Plunkett", 
-        attendance: 1,
+        attendance: 2,
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
         puzzleComments: 0,
