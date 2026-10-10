@@ -82,7 +82,7 @@ const players = [
     { 
         name: "SolRay (Nanon) Nivataphand", 
         attendance: 1,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 2,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
@@ -98,7 +98,7 @@ const players = [
     { 
         name: "Ivan (Ivan David) Pulikkan", 
         attendance: 0,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
@@ -106,7 +106,7 @@ const players = [
     { 
         name: "Leo (Arlyn) Roteseree", 
         attendance: 1,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 1,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
@@ -122,7 +122,7 @@ const players = [
     { 
         name: "Bohden Sheridan",
         attendance: 1,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 2,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
@@ -130,7 +130,7 @@ const players = [
     { 
         name: "Pete (Pitchya) Suwankeeree", 
         attendance: 2,
-        weeklyPuzzle: 0,
+        weeklyPuzzle: 3,
         monthlyPuzzle: 0,
         puzzleComments: 0,
         tournaments: 0
