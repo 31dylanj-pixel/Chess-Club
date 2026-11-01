@@ -29,7 +29,7 @@ const players = [
         weeklyPuzzle: 0,
         monthlyPuzzle: 0,
         puzzleComments: 0,
-        tournaments: 0
+        tournaments: 1
     },
     { 
         name: "Levy (Natthadetch) Hengpongthorn",
@@ -109,7 +109,7 @@ const players = [
         weeklyPuzzle: 2,
         monthlyPuzzle: 0,
         puzzleComments: 0,
-        tournaments: 0
+        tournaments: 3
     },
     { 
         name: "Grace (Nattha) Sakdibhornssup", 
@@ -125,7 +125,7 @@ const players = [
         weeklyPuzzle: 2,
         monthlyPuzzle: 0,
         puzzleComments: 0,
-        tournaments: 0
+        tournaments: 4
     },
     { 
         name: "Pete (Pitchya) Suwankeeree", 
@@ -133,7 +133,7 @@ const players = [
         weeklyPuzzle: 5,
         monthlyPuzzle: 0,
         puzzleComments: 0,
-        tournaments: 0
+        tournaments: 2
     },
     { 
         name: "Penguin (Teetat) Tanakornkul",
@@ -157,7 +157,7 @@ const players = [
         weeklyPuzzle: 3,
         monthlyPuzzle: 0,
         puzzleComments: 0,
-        tournaments: 0
+        tournaments: 5
     }
 ];
 
