@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
@@ -25,110 +25,37 @@
      SIDEBAR NAVIGATION
 ======================================== -->
 
-<button
-    class="sidebar-toggle"
-    id="sidebarToggle"
-    aria-label="Collapse navigation"
-    aria-expanded="true"
->
-    ‹
-</button>
+<header class="topbar" id="topbar">
 
+    <a class="topbar-brand" href="index.html" aria-label="Chess Club home">
+        <span class="topbar-logo">&#9812;</span>
+        <span class="topbar-title">Chess Club</span>
+    </a>
 
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button
+        class="topbar-toggle"
+        id="topbarToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="topbarNav"
+    >
+        <span></span><span></span><span></span>
+    </button>
 
-
-<aside class="sidebar" id="sidebar">
-
-    <div class="sidebar-brand">
-
-        <div class="sidebar-logo">
-            ♔
-        </div>
-
-        <div>
-            <h2>Chess Club</h2>
-            <span>Navigation</span>
-        </div>
-
-    </div>
-
-
-    <nav class="sidebar-nav">
-
-        <div class="sidebar-category">
-            GENERAL
-        </div>
-    
-        <a href="index.html" class="sidebar-link">
-            <span class="sidebar-icon">🏠</span>
-            <span>Home</span>
-        </a>
-    
-    
-        <div class="sidebar-category">
-            CLUB
-        </div>
-    
-        <a href="leaderboard.html" class="sidebar-link">
-            <span class="sidebar-icon">🏆</span>
-            <span>Leaderboard</span>
-        </a>
-    
-        <a href="members.html" class="sidebar-link">
-            <span class="sidebar-icon">👥</span>
-            <span>Members</span>
-        </a>
-    
-        <a href="objectives.html" class="sidebar-link">
-            <span class="sidebar-icon">🎯</span>
-            <span>Objectives</span>
-        </a>
-    
-        <a href="rules.html" class="sidebar-link">
-            <span class="sidebar-icon">📜</span>
-            <span>Rules & Points</span>
-        </a>
-    
-    
-        <div class="sidebar-category">
-            PUZZLES
-        </div>
-    
-        <a href="puzzle-winners.html" class="sidebar-link">
-            <span class="sidebar-icon">🧩</span>
-            <span>Puzzle Winners</span>
-        </a>
-    
-    
-        <div class="sidebar-category">
-            RESOURCES
-        </div>
-    
-        <a
-            href="https://classroom.google.com/c/ODc0NTU4MTgyODM5"
-            target="_blank"
-            class="sidebar-link"
-        >
-            <span class="sidebar-icon">📚</span>
-            <span>Google Classroom</span>
-            <span class="sidebar-external">↗</span>
-        </a>
-    
+    <nav class="topbar-nav" id="topbarNav" aria-label="Main navigation">
+        <a href="index.html" class="topbar-link"><span class="topbar-icon">🏠</span><span>Home</span></a>
+        <a href="leaderboard.html" class="topbar-link"><span class="topbar-icon">🏆</span><span>Leaderboard</span></a>
+        <a href="members.html" class="topbar-link"><span class="topbar-icon">👥</span><span>Members</span></a>
+        <a href="objectives.html" class="topbar-link"><span class="topbar-icon">🎯</span><span>Objectives</span></a>
+        <a href="rules.html" class="topbar-link"><span class="topbar-icon">📜</span><span>Rules &amp; Points</span></a>
+        <a href="puzzle-winners.html" class="topbar-link"><span class="topbar-icon">🧩</span><span>Puzzle Winners</span></a>
+        <a href="https://classroom.google.com/c/ODc0NTU4MTgyODM5" target="_blank" rel="noopener" class="topbar-link"><span class="topbar-icon">📚</span><span>Classroom</span><span class="topbar-external">&#8599;</span></a>
     </nav>
 
-    <div class="sidebar-bottom">
+</header>
 
-        <div class="sidebar-divider"></div>
+<div class="topbar-overlay" id="topbarOverlay"></div>
 
-        <p>
-            Think. Plan.<br>
-            Checkmate.
-        </p>
-
-    </div>
-
-</aside>
     
     <main class="container">
 
@@ -457,7 +384,7 @@
 
     </main>
 
-    <script src="sidebar.js"></script>
+    <script src="nav.js"></script>
     
 </body>
 
