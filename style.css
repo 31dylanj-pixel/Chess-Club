@@ -2,6 +2,11 @@
    FONTS & RESET
 ========================= */
 
+:root {
+    --font-heading: "EB Garamond", "Garamond", Georgia, serif;
+    --font-body: "Montserrat", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,7 +64,7 @@ html {
 body {
     min-height: 100vh;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     background:
         radial-gradient(
@@ -164,567 +169,252 @@ main {
 }
 
 /* ========================================
-   SIDEBAR NAVIGATION
-======================================== */
-
-.sidebar {
-    position: fixed;
-
-    top: 20px;
-    left: 20px;
-    bottom: 20px;
-
-    width: 260px;
-
-    padding: 22px 16px;
-
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(9, 22, 39, 0.96),
-            rgba(4, 11, 21, 0.97)
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.085);
-
-    border-radius: var(--radius-xl);
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    box-shadow:
-        0 24px 60px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
-
-    z-index: 1000;
-
-    transition:
-        width var(--transition-normal),
-        box-shadow var(--transition-normal);
-}
-
-/* ========================================
-   SIDEBAR BRAND
-======================================== */
-
-.sidebar-brand {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 5px 7px 22px;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-}
-
-.sidebar-logo {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    flex-shrink: 0;
-
-    border-radius: 13px;
-
-    background:
-        rgba(212, 175, 55, 0.1);
-
-    border:
-        1px solid rgba(212, 175, 55, 0.25);
-
-    color: #d4af37;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 1.4rem;
-}
-
-.sidebar-brand h2 {
-    margin: 0;
-
-    color: #d4af37;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 0.95rem;
-
-    font-weight: 800;
-}
-
-.sidebar-brand span {
-    display: block;
-
-    margin-top: 2px;
-
-    color:
-        rgba(255, 255, 255, 0.4);
-
-    font-size: 0.62rem;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* ========================================
-   SIDEBAR NAV
-======================================== */
-
-.sidebar-category {
-    margin: 18px 7px 7px;
-
-    color: rgba(255, 255, 255, 0.28);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 0.55rem;
-
-    font-weight: 800;
-
-    letter-spacing: 1.8px;
-
-    line-height: 1;
-}
-
-.sidebar-category:first-child {
-    margin-top: 2px;
-}
-
-.sidebar-nav {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-.sidebar-link {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    min-height: 45px;
-
-    padding: 0 12px;
-
-    box-sizing: border-box;
-
-    border-radius: 12px;
-
-    color:
-        rgba(255, 255, 255, 0.65);
-
-    text-decoration: none;
-
-    font-size: 0.78rem;
-
-    font-weight: 500;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
-        
-    border: 1px solid transparent;
-}
-
-.sidebar-icon {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 25px;
-
-    flex-shrink: 0;
-
-    font-size: 1rem;
-}
-
-.sidebar-link {
-    transition:
-        background var(--transition-fast),
-        color var(--transition-fast),
-        border-color var(--transition-fast),
-        transform var(--transition-fast);
-}
-
-.sidebar-link:hover {
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.065),
-            rgba(255, 255, 255, 0.025)
-        );
-
-    border-color: rgba(255, 255, 255, 0.08);
-
-    transform: translateX(2px);
-}
-
-/* ========================================
-   ACTIVE PAGE
-======================================== */
-
-.sidebar-link.active {
-    color: #d4af37;
-
-    background:
-        rgba(212, 175, 55, 0.1);
-
-    border-color:
-        rgba(212, 175, 55, 0.2);
-}
-
-.sidebar-link.active::before {
-    content: "";
-
-    position: absolute;
-
-    left: -1px;
-
-    top: 9px;
-    bottom: 9px;
-
-    width: 3px;
-
-    border-radius: 0 4px 4px 0;
-
-    background: #d4af37;
-
-    box-shadow:
-        0 0 10px rgba(212, 175, 55, 0.35);
-}
-
-
-/* ========================================
-   EXTERNAL LINK
-======================================== */
-
-.sidebar-external {
-    margin-left: auto;
-
-    color:
-        rgba(212, 175, 55, 0.55);
-
-    font-size: 0.8rem;
-}
-
-
-/* ========================================
-   SIDEBAR BOTTOM
-======================================== */
-
-.sidebar-bottom {
-    margin-top: auto;
-
-    padding: 0 7px;
-
-    overflow: hidden;
-}
-
-.sidebar-divider {
-    width: 100%;
-
-    height: 1px;
-
-    margin-bottom: 15px;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-}
-
-.sidebar-bottom p {
-    margin: 0;
-
-    color:
-        rgba(255, 255, 255, 0.3);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 0.6rem;
-
-    font-weight: 600;
-
-    line-height: 1.6;
-
-    letter-spacing: 0.5px;
-
-    white-space: nowrap;
-}
-
-
-/* ========================================
-   SIDEBAR CONTENT OFFSET
+   TOP NAVIGATION
 ======================================== */
 
 body {
-    padding-left: 300px;
-
-    transition:
-        padding-left var(--transition-normal);
+    padding-top: 76px;
 }
 
-/* ========================================
-   COLLAPSED SIDEBAR
-======================================== */
-
-.sidebar.collapsed {
-    width: 78px;
-}
-
-body.sidebar-collapsed {
-    padding-left: 118px;
-}
-
-.sidebar.collapsed .sidebar-category {
-    display: none;
-}
-
-/* ========================================
-   COLLAPSED BRAND
-======================================== */
-
-.sidebar.collapsed .sidebar-brand {
-    justify-content: center;
-
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.sidebar.collapsed .sidebar-brand > div:last-child {
-    display: none;
-}
-
-
-/* ========================================
-   COLLAPSED NAV LINKS
-======================================== */
-
-.sidebar.collapsed .sidebar-link {
-    justify-content: center;
-
-    padding-left: 0;
-    padding-right: 0;
-
-    gap: 0;
-}
-
-.sidebar.collapsed .sidebar-link > span:not(.sidebar-icon) {
-    display: none;
-}
-
-.sidebar.collapsed .sidebar-icon {
-    width: auto;
-}
-
-
-/* ========================================
-   COLLAPSED BOTTOM
-======================================== */
-
-.sidebar.collapsed .sidebar-bottom {
-    padding: 0;
-
-    text-align: center;
-}
-
-.sidebar.collapsed .sidebar-bottom p {
-    display: none;
-}
-
-
-/* ========================================
-   SIDEBAR TOGGLE
-======================================== */
-
-.sidebar-toggle {
+.topbar {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    top: 30px;
-    left: 264px;
+    height: 64px;
+    padding: 0 clamp(16px, 3vw, 36px);
 
-    width: 32px;
-    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 
+    background: rgba(5, 11, 20, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 1000;
+}
+
+.topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.topbar-logo {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0;
+    width: 38px;
+    height: 38px;
 
-    border-radius: 9px;
+    border-radius: 11px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
 
-    background:
-        rgba(8, 20, 35, 0.95);
+    font-size: 1.3rem;
+}
 
-    color: #d4af37;
+.topbar-title {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
 
-    font-family: "Montserrat", sans-serif;
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
 
-    font-size: 1.15rem;
-    font-weight: 600;
+    flex: 1;
+    min-width: 0;
+}
 
-    line-height: 1;
+.topbar-icon {
+    display: none;
+    font-size: 1rem;
+}
 
-    cursor: pointer;
+.topbar-link {
+    position: relative;
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.18);
+    padding: 9px 13px;
 
-    z-index: 1100;
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
 
     transition:
-        left 0.25s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        background var(--transition-fast),
+        color var(--transition-fast);
 }
 
-.sidebar-toggle:hover {
-    background:
-        rgba(212, 175, 55, 0.12);
-
-    border-color:
-        rgba(212, 175, 55, 0.25);
-
-    transform: scale(1.05);
+.topbar-link:hover,
+.topbar-link:focus-visible {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+    outline: none;
 }
 
-body.sidebar-collapsed .sidebar-toggle {
-    left: 82px;
+.topbar-link.active {
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.1);
 }
 
-/* ========================================
-   COLLAPSED TOGGLE
-======================================== */
-
-body.sidebar-collapsed .sidebar-toggle {
-    left: 82px;
+.topbar-link.active::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gold);
 }
 
-/* ========================================
-   MOBILE OVERLAY
-======================================== */
+.topbar-external {
+    color: rgba(212, 175, 55, 0.6);
+    font-size: 0.75rem;
+}
 
-.sidebar-overlay {
+.topbar-toggle,
+.topbar-overlay {
     display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0, 0, 0, 0.55);
-
-    backdrop-filter: blur(3px);
-
-    z-index: 900;
 }
 
+@media (max-width: 1000px) {
 
-/* ========================================
-   TABLET / MOBILE
-======================================== */
-
-@media (max-width: 900px) {
-
-    body,
-    body.sidebar-collapsed {
-        padding-left: 0;
-    }
-
-    .sidebar {
-        top: 12px;
-        left: 12px;
-        bottom: 12px;
-
-        width: 245px;
-
-        transform: translateX(-120%);
-
-        transition:
-            transform 0.25s ease;
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
-
-    .sidebar.collapsed {
-        width: 245px;
-    }
-
-    .sidebar-toggle {
+    .topbar-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
 
-        top: 16px;
-        left: 16px;
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+        padding: 0;
+
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        cursor: pointer;
     }
 
-    body.sidebar-collapsed .sidebar-toggle {
-        left: 16px;
+    .topbar-toggle span {
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--gold);
+        transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .sidebar-overlay {
-        display: block;
+    .topbar-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .topbar-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .topbar-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .topbar-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 12px 16px 18px;
+
+        background: rgba(5, 11, 20, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
         opacity: 0;
-
         visibility: hidden;
+        transform: translateY(-8px);
 
         transition:
-            opacity 0.25s ease,
-            visibility 0.25s ease;
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s;
     }
 
-    .sidebar-overlay.open {
+    .topbar-nav.open {
         opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
+    .topbar-icon {
+        display: inline-flex;
+        width: 24px;
+    }
+
+    .topbar-link {
+        gap: 12px;
+        padding: 13px 12px;
+        font-size: 0.9rem;
+    }
+
+    .topbar-link.active::after {
+        display: none;
+    }
+
+    .topbar-external {
+        margin-left: auto;
+    }
+
+    .topbar-overlay {
+        display: block;
+        position: fixed;
+        inset: 64px 0 0 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s;
+        z-index: 999;
+    }
+
+    .topbar-overlay.open {
+        opacity: 1;
         visibility: visible;
     }
-
 }
 
-
-/* ========================================
-   SMALL MOBILE
-======================================== */
-
-@media (max-width: 500px) {
-
-    .sidebar {
-        width: 225px;
-    }
-
+html {
+    scroll-padding-top: 80px;
 }
+
 
 /* =========================
    MAIN CONTAINER
@@ -2883,7 +2573,7 @@ h1 {
 
     color: white;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     font-size: 1rem;
 
@@ -5389,4 +5079,234 @@ h1 {
         min-height: 110px;
     }
 
+}
+
+
+/* ========================================
+   TYPOGRAPHY: EB GARAMOND HEADINGS / MONTSERRAT BODY
+======================================== */
+
+body {
+    font-family: var(--font-body);
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+html body h1 { font-size: 3.4rem; }
+html body h2 { font-size: calc(1em * 1.12); }
+
+
+/* ========================================
+   SCROLLCRAFT — HOME PAGE
+   Scroll-driven hero + choreographed reveals
+======================================== */
+
+.sc-progress {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: 3px;
+
+    transform-origin: left center;
+    transform: scaleX(var(--sc-page, 0));
+
+    background: var(--gold);
+    z-index: 1001;
+    pointer-events: none;
+}
+
+.sc-hero {
+    position: relative;
+    height: 100vh;
+    margin-top: -76px;
+}
+
+.sc-stage {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 80px 20px 0;
+}
+
+.sc-board {
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+
+    width: 160vmax;
+    height: 90vmax;
+
+    margin-left: -80vmax;
+
+    background:
+        conic-gradient(
+            rgba(212, 175, 55, 0.07) 25%,
+            transparent 0 50%,
+            rgba(212, 175, 55, 0.07) 0 75%,
+            transparent 0
+        ) 0 0 / 120px 120px;
+
+    -webkit-mask-image: radial-gradient(ellipse at 50% 100%, #000 0%, transparent 65%);
+            mask-image: radial-gradient(ellipse at 50% 100%, #000 0%, transparent 65%);
+
+    transform-origin: 50% 100%;
+    transform:
+        perspective(900px)
+        rotateX(calc(62deg - var(--sc-p, 0) * 28deg))
+        translateY(calc(var(--sc-p, 0) * -60px));
+}
+
+.sc-king {
+    color: var(--gold);
+    font-size: clamp(7rem, 22vmin, 14rem);
+    line-height: 1;
+
+    filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.35));
+
+    transform:
+        translateY(calc(var(--sc-p, 0) * -40px))
+        scale(calc(1 - var(--sc-p, 0) * 0.45))
+        rotate(calc(var(--sc-p, 0) * -8deg));
+    opacity: calc(1 - var(--sc-p, 0) * 0.55);
+}
+
+html body .sc-title {
+    color: var(--gold);
+    font-size: clamp(3.2rem, 11vw, 8rem);
+    line-height: 1;
+
+    letter-spacing: calc(0.14em - var(--sc-p, 0) * 0.12em);
+
+    transform: translateY(calc(var(--sc-p, 0) * -30px));
+}
+
+.sc-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4em 1.1em;
+
+    margin-top: 18px;
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.sc-word-gold {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.sc-ready .sc-word {
+    opacity: 0.12;
+    transform: translateY(18px);
+    filter: blur(4px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.sc-ready .sc-word.on {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.sc-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-muted);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+
+    opacity: calc(1 - var(--sc-p, 0) * 6);
+}
+
+.sc-hint i {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(var(--gold), transparent);
+    animation: scHint 1.8s ease-in-out infinite;
+}
+
+@keyframes scHint {
+    0%, 100% { transform: scaleY(0.4); transform-origin: top; }
+    50%      { transform: scaleY(1);   transform-origin: top; }
+}
+
+/* Pinned scroll scene: hero stays while scroll scrubs it */
+.sc-ready .sc-hero {
+    height: 260vh;
+}
+
+.sc-ready .sc-stage {
+    position: sticky;
+    top: 0;
+}
+
+/* Scroll-triggered reveals */
+.sc-ready [data-reveal]:not(.in) {
+    opacity: 0;
+    transform: translate3d(var(--sc-x, 0), 44px, 0);
+}
+
+.sc-ready [data-reveal].in {
+    animation: scIn 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+    animation-delay: var(--sc-d, 0ms);
+}
+
+@keyframes scIn {
+    from {
+        opacity: 0;
+        transform: translate3d(var(--sc-x, 0), 44px, 0);
+    }
+}
+
+/* Parallax drift on decorative icons */
+[data-parallax] {
+    will-change: transform;
+}
+
+@media (max-width: 700px) {
+    html body h1 { font-size: 2.6rem; }
+    .sc-ready .sc-hero { height: 220vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sc-ready .sc-hero { height: 100vh; }
+    .sc-ready .sc-stage { position: relative; }
+    .sc-ready .sc-word { opacity: 1; transform: none; filter: none; transition: none; }
+    .sc-ready [data-reveal]:not(.in) { opacity: 1; transform: none; }
+    .sc-ready [data-reveal].in { animation: none; }
+    .sc-hint i { animation: none; }
 }
